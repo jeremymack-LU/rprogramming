@@ -4,7 +4,6 @@ title-slide-attributes:
     data-background-image: "/images/lts_logo.jpg"
     data-background-size: "30%"
     data-background-opacity: "0.90"
-    data-background-position: "50% 45%"
 format:
    revealjs:
      theme: [dark, custom.scss]
@@ -52,7 +51,7 @@ preview-links: auto
 :::
 :::
 
-## Programming in R {data-menu-title="R roller coaster"}
+## Programming in R {data-menu-title="R roller coaster!"}
 
 <p>
 
