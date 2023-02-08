@@ -52,7 +52,7 @@ preview-links: auto
 :::
 :::
 
-## Programming in R
+## Programming in R {data-menu-title="R roller coaster"}
 
 <p>
 
