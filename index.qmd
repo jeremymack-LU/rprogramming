@@ -1,0 +1,195 @@
+---
+title: "Introduction to R Programming <br/><br/><br/><br/><br/>"
+title-slide-attributes:
+    data-background-image: /images/lts_logo.jpg
+    data-background-size: "30%"
+    data-background-opacity: "0.90"
+    data-background-position: "50% 45%"
+format:
+   revealjs:
+     theme: [dark, custom.scss]
+     code-fold: false
+     slide-number: c
+     controls: true
+     css: custom.css
+     menu: {
+      side: 'left',
+      numbers: true,
+      markers: true,
+      width: 'normal',
+      hideMissingTitles: true,
+      titleSelector: ''}
+preview-links: auto
+---
+
+## About this presentation {data-menu-title="About"}
+
+::: columns
+-   This seminar is the first in a series on [**R programming**]{style="color:#edea2b"}. 
+
+-   It's targeted at people that have little to no programming experience.
+
+-   By the end of this presentation, you should know about...
+
+    1. R and RStudio and how they work together
+    2. Different data types and structures
+    3. Objects and functions
+    4. Loading data into the R Environment
+    5. Exporting data from the R Environment
+
+-   Raw code available on [Github](https://github.com/jeremymack-LU/shinyapps) 
+:::
+
+::: columns
+::: {.column width="33%"}
+:::
+::: {.column width="33%"}
+:::
+::: {.column width="33%"}
+![](images/rlang_hex.png){width=32%}
+![](images/rstudio_hex.png){width=32%}
+![](images/tidyverse_hex.png){width=32%}
+:::
+:::
+
+## Programming in R
+
+<p>
+
+<a href="https://allisonhorst.com/"> <img src="./images/r_rollercoaster.png" alt="Picture of learning R graph" height="100%" width="100%"/> </a>
+
+</p>
+
+## Structure of the presentation {data-menu-title="Presentation outline"}
+
+The presentation is split into five topics:
+
+:::{.fragment}
+-   Topic 1:    [**What**]{style="color:#edea2b"} is R (and RStudio)?
+
+-   Topic 2:    [**Why**]{style="color:#edea2b"} use R (and RStudio)?
+
+-   Topic 3:    [**Where**]{style="color:#edea2b"} can I get R (and RStudio)?
+:::
+
+:::{.fragment}
+-   Topic 4:    [**How**]{style="color:#edea2b"} do I work with R (and RStudio)?
+
+    - R Environment
+    - Objects - Data Types and Structures
+    - Functions and Packages
+:::
+
+:::{.incremental}
+-   Topic 5:    Additional Resources
+:::
+
+![](images/r_learners.png){.absolute bottom=0 right=0 width="50%" height="50%"}
+
+# Topic 1 {data-menu-title="Topic 1"}
+
+[[**What**]{style="color:#edea2b"} is R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+
+## [**What**]{style="color:#edea2b"} is R? {data-menu-title="What is R"}
+
+::::{.columns}
+
+:::{.column width="65%"}
+:::{.fragment}
+-   R is a **programming language** ([one of many](https://www.tiobe.com/tiobe-index/)) and an **environment** for statistical computing.
+:::
+
+:::{.fragment}
+-   Developed by Ross Ihaka and Robert Gentleman 29 years ago; now maintained by a core team supported by the [R Foundation](https://www.r-project.org/foundation/).
+:::
+
+:::{.fragment}
+-   Dialect of the S language (S-Plus)
+:::
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="30%"}
+![](images/R_logo.png){width=60%}
+:::
+
+::::
+
+:::{.fragment}
+-   R Development Timeline:
+
+![](images/timeline.jpeg){width=100%}
+:::
+
+## [**What**]{style="color:#edea2b"} is RStudio? {data-menu-title="What is RStudio"}
+
+::::{.columns}
+
+:::{.column width="65%"}
+:::{.fragment}
+-   RStudio is an **Integrated Development Environment** (IDE), or a front end platform to run R.
+:::
+
+:::{.fragment}
+-   Developed by [Posit](https://posit.co/), a company that develops free and open tools for R, and enterprise-ready professional products.
+:::
+
+:::{.fragment}
+-   Open source tools for R:
+
+    - [RStudio](https://posit.co/products/open-source/rstudio/) IDE
+    - Data science packages ([tidyverse](https://www.tidyverse.org/), [tidymodels](https://www.tidymodels.org/), [ggplot2](https://ggplot2.tidyverse.org))
+    - Web application platform ([Shiny](https://shiny.rstudio.com/))
+    - Scientific and technical publishing platform ([Quarto](https://quarto.org/))
+    - Web servers ([Shiny server](https://posit.co/products/open-source/shinyserver/))
+:::
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="30%"}
+![](images/rstudio_hex.png){width=60%}
+:::
+
+::::
+
+# Topic 2 {data-menu-title="Topic 2"}
+
+[[**Why**]{style="color:#edea2b"} use R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+
+## [**Why**]{style="color:#edea2b"} use R? {data-menu-title="Why use R"}
+
+::::{.columns}
+
+:::{.column width="65%"}
+:::{.fragment}
+-   Open source and **free**!
+:::
+
+:::{.fragment}
+-   Available on most platforms/OS
+:::
+
+:::{.fragment}
+-   Very active development community
+
+    - CRAN: The **C**omprehensive **R** **A**rchive **N**etwork
+    - User contributed extension packages (>19,000)
+:::
+
+:::{.fragment}
+-   **Reproducibility**
+:::
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="30%"}
+![](images/R_logo.png){width=60%}
+:::
+
+::::
