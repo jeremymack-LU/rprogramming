@@ -1,7 +1,7 @@
 ---
 title: "Introduction to R Programming <br/><br/><br/><br/><br/>"
 title-slide-attributes:
-    data-background-image: /images/lts_logo.jpg
+    data-background-image: "/images/lts_logo.jpg"
     data-background-size: "30%"
     data-background-opacity: "0.90"
     data-background-position: "50% 45%"
