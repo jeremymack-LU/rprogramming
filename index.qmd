@@ -4,6 +4,7 @@ title-slide-attributes:
     data-background-image: images/lts_logo.jpg
     data-background-size: "30%"
     data-background-opacity: "0.90"
+    data-background-position: "50% 45%"
 format:
    revealjs:
      theme: [dark, custom.scss]
@@ -28,6 +29,7 @@ preview-links: auto
 
 -   It's targeted at people that have little to no programming experience.
 
+:::{.fragment}
 -   By the end of this presentation, you should know about...
 
     1. R and RStudio and how they work together
@@ -35,8 +37,11 @@ preview-links: auto
     3. Objects and functions
     4. Loading data into the R Environment
     5. Exporting data from the R Environment
+:::
 
--   Raw code available on [Github](https://github.com/jeremymack-LU/shinyapps) 
+:::{.fragment}
+-   Raw code available on [Github](https://github.com/jeremymack-LU/shinyapps)
+:::
 :::
 
 ::: columns
@@ -111,7 +116,7 @@ The presentation is split into five topics:
 :::
 
 :::{.column width="30%"}
-![](images/R_logo.png){width=60%}
+<center>![](images/R_logo.png){width=90%}</center>
 :::
 
 ::::
@@ -150,7 +155,8 @@ The presentation is split into five topics:
 :::
 
 :::{.column width="30%"}
-![](images/rstudio_hex.png){width=60%}
+<center>![](images/rstudio_hex.png){width=90%}</center>
+
 :::
 
 ::::
@@ -178,9 +184,50 @@ The presentation is split into five topics:
     - CRAN: The **C**omprehensive **R** **A**rchive **N**etwork
     - User contributed extension packages (>19,000)
 :::
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="30%"}
+<center>![](images/R_logo.png){width=90%}</center>
+:::
+
+:::{.fragment .fade-in-then-out}
+![](images/r_community.png){.absolute top="5%" right="0%" width="40%"}
+:::
 
 :::{.fragment}
 -   **Reproducibility**
+:::
+
+:::{.fragment}
+![](images/reproducibility.png){.absolute top="5%" right="0%" width="40%"}
+![](images/reproducibility3.png){.absolute top="50%" right="0%" width="40%"}
+:::
+
+::::
+
+## [**Why**]{style="color:#edea2b"} use RStudio? {data-menu-title="Why use RStudio"}
+
+::::{.columns}
+
+:::{.column width="65%"}
+:::{.fragment}
+-   Like R, it's open source and **free**!
+:::
+
+:::{.fragment}
+-   It can reduce the learning curve of R, by creating **organization**.
+:::
+
+:::{.fragment}
+-   Integrates nicely with other features/applications that be used with R:
+
+    - R Projects
+    - Version control and tracking
+    - R Markdown
+    - ShinyApps
 :::
 :::
 
@@ -188,7 +235,32 @@ The presentation is split into five topics:
 :::
 
 :::{.column width="30%"}
-![](images/R_logo.png){width=60%}
+<center>![](images/rstudio_hex.png){width=90%}</center>
+:::
+
+::::
+
+## [**How**]{style="color:#edea2b"} do R and RStudio work together? {data-menu-title="Car analogy"}
+
+Consider a car analogy.
+
+::::{.columns}
+
+:::{.column width="55%"}
+**R - the engine**
+
+ - R runs things under the hood - it's the enginge that allows the car to drive.
+ 
+**RStudio - the body**
+
+ - RStudio provides a frame that keeps things organized and finishings that make it visually appealing.
+:::
+
+:::{.column width="5%"}
+:::
+
+:::{.column width="40%"}
+<center>![](images/car_engine.jpg){width=90%}</center>
 :::
 
 ::::
