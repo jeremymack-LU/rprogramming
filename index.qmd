@@ -265,6 +265,8 @@ Consider a car analogy.
 
 ::::
 
+* You need R to run RStudio, but not RStudio to run R. 
+
 # Topic 3 {data-menu-title="Topic 3"}
 
 [[**How**]{style="color:#edea2b"} do I get R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
@@ -287,7 +289,7 @@ Consider a car analogy.
 :::
 
 
-## Review - R and RStudio:{data-background=#000000 data-menu-title="Review1"}
+## Review - R and RStudio:{data-background=#000000 data-menu-title="Review 1"}
 
 :::{.incremental}
 -   [**R**]{style="color:#edea2b"} is a programming language initially built for statistical computing ("Engine").
@@ -300,3 +302,9 @@ Consider a car analogy.
 :::
 
 ![](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png){.absolute bottom=0 right=0 width="50%"}
+
+# Topic 4 {data-menu-title="Topic 4"}
+
+[[**How**]{style="color:#edea2b"} do I work with R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 4: [**How**]{style="color:#edea2b"} do I work with R (and RStudio)? {data-menu-title="Working with R"} 
