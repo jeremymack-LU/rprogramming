@@ -73,7 +73,7 @@ The presentation is split into five topics:
 
 -   Topic 2:    [**Why**]{style="color:#edea2b"} use R (and RStudio)?
 
--   Topic 3:    [**Where**]{style="color:#edea2b"} can I get R (and RStudio)?
+-   Topic 3:    [**How**]{style="color:#edea2b"} do I get R (and RStudio)?
 :::
 
 :::{.fragment}
@@ -222,7 +222,7 @@ The presentation is split into five topics:
 :::
 
 :::{.fragment}
--   Integrates nicely with other features/applications that be used with R:
+-   Integrates nicely with other features and applications that can be used with R, especially those that increase reproducibility:
 
     - R Projects
     - Version control and tracking
@@ -244,23 +244,59 @@ The presentation is split into five topics:
 
 Consider a car analogy.
 
-::::{.columns}
+::::{.columns .fragment}
 
 :::{.column width="55%"}
 **R - the engine**
 
- - R runs things under the hood - it's the enginge that allows the car to drive.
+-   R runs things under the hood - it's the enginge that allows the car to drive.
  
 **RStudio - the body**
 
- - RStudio provides a frame that keeps things organized and finishings that make it visually appealing.
+-   RStudio provides a frame that keeps things organized and finishings that make it visually appealing.
 :::
 
-:::{.column width="5%"}
+:::{.column width="1%"}
 :::
 
-:::{.column width="40%"}
+:::{.column width="44%"}
 <center>![](images/car_engine.jpg){width=90%}</center>
 :::
 
 ::::
+
+# Topic 3 {data-menu-title="Topic 3"}
+
+[[**How**]{style="color:#edea2b"} do I get R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 3: [**How**]{style="color:#edea2b"} do I get R (and RStudio)? {data-menu-title="How do I get R (and RStudio)"}
+
+-   Download and local install:
+    -   You can download R from the [R Project website](https://www.r-project.org/).
+    -   You can download RStudio from the [Posit website](https://posit.co/download/rstudio-desktop/).
+
+
+:::{.fragment}
+-   Run R and RStudio from LUapps:
+    -   [LUapps](https://lts.lehigh.edu/luapps-powered-aws) is a virtual environment hosted by AWS.
+    -   Accessed through a web browser (No VPN required).
+    -   Both R and RStudio are located in the [**Common Environment**]{style="color:#edea2b"}
+
+<left>![](images/luapps.png){height="250"} &nbsp; &nbsp; ![](images/luapps2.png){height="250"}</left>
+
+:::
+
+
+## Review - R and RStudio:{data-background=#000000 data-menu-title="Review1"}
+
+:::{.incremental}
+-   [**R**]{style="color:#edea2b"} is a programming language initially built for statistical computing ("Engine").
+
+-   [**RStudio**]{style="color:#edea2b"} is an integrated development environment that makes working with R easier ("Body").
+
+-   Both R and RStudio, are [**free and open source programs**]{style="color:#edea2b"} that can increase workflow [**reproducibility**]{style="color:#edea2b"}.
+
+-   Both R and RStudio, can be downloaded and installed locally, or run in a virtual environment through [LUapps]{style="color:#edea2b"}.
+:::
+
+![](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png){.absolute bottom=0 right=0 width="50%"}
