@@ -25,21 +25,21 @@ preview-links: auto
 ## About this presentation {data-menu-title="About"}
 
 ::: columns
--   This seminar is the first in a series on [**R programming**]{style="color:#edea2b"}. 
+-   This seminar is the first in a series on [**R programming**]{style="color:#edea2b"}.
 
 -   It's targeted at people that have little to no programming experience.
 
-:::{.fragment}
+::: fragment
 -   By the end of this presentation, you should know about...
 
-    1. R and RStudio and how they work together
-    2. Different data types and structures
-    3. Objects and functions
-    4. Loading data into the R Environment
-    5. Exporting data from the R Environment
+    1.  R and RStudio and how they work together
+    2.  Different data types and structures
+    3.  Objects and functions
+    4.  Loading data into the R Environment
+    5.  Exporting data from the R Environment
 :::
 
-:::{.fragment}
+::: fragment
 -   Raw code available on [Github](https://github.com/jeremymack-LU/shinyapps)
 :::
 :::
@@ -47,12 +47,12 @@ preview-links: auto
 ::: columns
 ::: {.column width="33%"}
 :::
+
 ::: {.column width="33%"}
 :::
+
 ::: {.column width="33%"}
-![](images/rlang_hex.png){width=32%}
-![](images/rstudio_hex.png){width=32%}
-![](images/tidyverse_hex.png){width=32%}
+![](images/rlang_hex.png){width="32%"} ![](images/rstudio_hex.png){width="32%"} ![](images/tidyverse_hex.png){width="32%"}
 :::
 :::
 
@@ -66,9 +66,9 @@ preview-links: auto
 
 ## Structure of the presentation {data-menu-title="Presentation outline"}
 
-The presentation is split into five topics:
+The presentation is split into seven topics:
 
-:::{.fragment}
+::: fragment
 -   Topic 1:    [**What**]{style="color:#edea2b"} is R (and RStudio)?
 
 -   Topic 2:    [**Why**]{style="color:#edea2b"} use R (and RStudio)?
@@ -76,200 +76,215 @@ The presentation is split into five topics:
 -   Topic 3:    [**How**]{style="color:#edea2b"} do I get R (and RStudio)?
 :::
 
-:::{.fragment}
--   Topic 4:    [**How**]{style="color:#edea2b"} do I work with R (and RStudio)?
+::: fragment
+-   Topic 4:    Working with R in RStudio
 
-    - R Environment
-    - Objects - Data Types and Structures
-    - Functions and Packages
+    -   User Interface
+    -   R Environment
+    
+-   Topic 5:    Objects in R
+
+    -   Data Types and Structures
+    
+-   Topic 6:    Functions and Packages
 :::
 
-:::{.incremental}
--   Topic 5:    Additional Resources
+::: incremental
+-   Topic 7:    Additional Resources
 :::
 
-![](images/r_learners.png){.absolute bottom=0 right=0 width="50%" height="50%"}
+![](images/r_learners.png){.absolute bottom="0" right="0" width="50%" height="50%"}
 
 # Topic 1 {data-menu-title="Topic 1"}
 
-[[**What**]{style="color:#edea2b"} is R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+[**What**]{style="color:#edea2b"} is R (and RStudio)?
 
 ## [**What**]{style="color:#edea2b"} is R? {data-menu-title="What is R"}
 
-::::{.columns}
-
-:::{.column width="65%"}
-:::{.fragment}
+::: columns
+::: {.column width="65%"}
+::: fragment
 -   R is a **programming language** ([one of many](https://www.tiobe.com/tiobe-index/)) and an **environment** for statistical computing.
 :::
 
-:::{.fragment}
+::: fragment
 -   Developed by Ross Ihaka and Robert Gentleman 29 years ago; now maintained by a core team supported by the [R Foundation](https://www.r-project.org/foundation/).
 :::
 
-:::{.fragment}
+::: fragment
 -   Dialect of the S language (S-Plus)
 :::
 :::
 
-:::{.column width="5%"}
+::: {.column width="5%"}
 :::
 
-:::{.column width="30%"}
-<center>![](images/R_logo.png){width=90%}</center>
+::: {.column width="30%"}
+<center>
+
+![](images/R_logo.png){width="90%"}
+
+</center>
+:::
 :::
 
-::::
-
-:::{.fragment}
+::: fragment
 -   R Development Timeline:
 
-![](images/timeline.jpeg){width=100%}
+![](images/timeline.jpeg){width="100%"}
 :::
 
 ## [**What**]{style="color:#edea2b"} is RStudio? {data-menu-title="What is RStudio"}
 
-::::{.columns}
-
-:::{.column width="65%"}
-:::{.fragment}
+::: columns
+::: {.column width="65%"}
+::: fragment
 -   RStudio is an **Integrated Development Environment** (IDE), or a front end platform to run R.
 :::
 
-:::{.fragment}
+::: fragment
 -   Developed by [Posit](https://posit.co/), a company that develops free and open tools for R, and enterprise-ready professional products.
 :::
 
-:::{.fragment}
+::: fragment
 -   Open source tools for R:
 
-    - [RStudio](https://posit.co/products/open-source/rstudio/) IDE
-    - Data science packages ([tidyverse](https://www.tidyverse.org/), [tidymodels](https://www.tidymodels.org/), [ggplot2](https://ggplot2.tidyverse.org))
-    - Web application platform ([Shiny](https://shiny.rstudio.com/))
-    - Scientific and technical publishing platform ([Quarto](https://quarto.org/))
-    - Web servers ([Shiny server](https://posit.co/products/open-source/shinyserver/))
+    -   [RStudio](https://posit.co/products/open-source/rstudio/) IDE
+    -   Data science packages ([tidyverse](https://www.tidyverse.org/), [tidymodels](https://www.tidymodels.org/), [ggplot2](https://ggplot2.tidyverse.org))
+    -   Web application platform ([Shiny](https://shiny.rstudio.com/))
+    -   Scientific and technical publishing platform ([Quarto](https://quarto.org/))
+    -   Web servers ([Shiny server](https://posit.co/products/open-source/shinyserver/))
 :::
 :::
 
-:::{.column width="5%"}
+::: {.column width="5%"}
 :::
 
-:::{.column width="30%"}
-<center>![](images/rstudio_hex.png){width=90%}</center>
+::: {.column width="30%"}
+<center>
 
+![](images/rstudio_hex.png){width="90%"}
+
+</center>
 :::
-
-::::
+:::
 
 # Topic 2 {data-menu-title="Topic 2"}
 
-[[**Why**]{style="color:#edea2b"} use R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+[**Why**]{style="color:#edea2b"} use R (and RStudio)?
 
 ## [**Why**]{style="color:#edea2b"} use R? {data-menu-title="Why use R"}
 
-::::{.columns}
-
-:::{.column width="65%"}
-:::{.fragment}
+::: columns
+::: {.column width="65%"}
+::: fragment
 -   Open source and **free**!
 :::
 
-:::{.fragment}
+::: fragment
 -   Available on most platforms/OS
 :::
 
-:::{.fragment}
+::: fragment
 -   Very active development community
 
-    - CRAN: The **C**omprehensive **R** **A**rchive **N**etwork
-    - User contributed extension packages (>19,000)
+    -   CRAN: The **C**omprehensive **R** **A**rchive **N**etwork
+    -   User contributed extension packages (\>19,000)
 :::
 :::
 
-:::{.column width="5%"}
+::: {.column width="5%"}
 :::
 
-:::{.column width="30%"}
-<center>![](images/R_logo.png){width=90%}</center>
+::: {.column width="30%"}
+<center>
+
+![](images/R_logo.png){width="90%"}
+
+</center>
 :::
 
-:::{.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out}
 ![](images/r_community.png){.absolute top="5%" right="0%" width="40%"}
 :::
 
-:::{.fragment}
+::: fragment
 -   **Reproducibility**
 :::
 
-:::{.fragment}
-![](images/reproducibility.png){.absolute top="5%" right="0%" width="40%"}
-![](images/reproducibility3.png){.absolute top="50%" right="0%" width="40%"}
+::: fragment
+![](images/reproducibility.png){.absolute top="5%" right="0%" width="40%"} ![](images/reproducibility3.png){.absolute top="50%" right="0%" width="40%"}
 :::
-
-::::
+:::
 
 ## [**Why**]{style="color:#edea2b"} use RStudio? {data-menu-title="Why use RStudio"}
 
-::::{.columns}
-
-:::{.column width="65%"}
-:::{.fragment}
+::: columns
+::: {.column width="65%"}
+::: fragment
 -   Like R, it's open source and **free**!
 :::
 
-:::{.fragment}
+::: fragment
 -   It can reduce the learning curve of R, by creating **organization**.
 :::
 
-:::{.fragment}
+::: fragment
 -   Integrates nicely with other features and applications that can be used with R, especially those that increase reproducibility:
 
-    - R Projects
-    - Version control and tracking
-    - R Markdown
-    - ShinyApps
+    -   R Projects
+    -   Version control and tracking
+    -   R Markdown
+    -   ShinyApps
 :::
 :::
 
-:::{.column width="5%"}
+::: {.column width="5%"}
 :::
 
-:::{.column width="30%"}
-<center>![](images/rstudio_hex.png){width=90%}</center>
-:::
+::: {.column width="30%"}
+<center>
 
-::::
+![](images/rstudio_hex.png){width="90%"}
+
+</center>
+:::
+:::
 
 ## [**How**]{style="color:#edea2b"} do R and RStudio work together? {data-menu-title="Car analogy"}
 
 Consider a car analogy.
 
-::::{.columns .fragment}
-
-:::{.column width="55%"}
+::: {.columns .fragment}
+::: {.column width="55%"}
 **R - the engine**
 
 -   R runs things under the hood - it's the enginge that allows the car to drive.
- 
+
 **RStudio - the body**
 
 -   RStudio provides a frame that keeps things organized and finishings that make it visually appealing.
 :::
 
-:::{.column width="1%"}
+::: {.column width="1%"}
 :::
 
-:::{.column width="44%"}
-<center>![](images/car_engine.jpg){width=90%}</center>
+::: {.column width="44%"}
+<center>
+
+![](images/car_engine.jpg){width="90%"}
+
+</center>
+:::
 :::
 
-::::
-
-* You need R to run RStudio, but not RStudio to run R. 
+::: fragment
+[\* You need R to run RStudio, but not RStudio to run R.]{style="color:#edea2b"}
+:::
 
 # Topic 3 {data-menu-title="Topic 3"}
 
-[[**How**]{style="color:#edea2b"} do I get R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+[**How**]{style="color:#edea2b"} do I get R (and RStudio)?
 
 ## Topic 3: [**How**]{style="color:#edea2b"} do I get R (and RStudio)? {data-menu-title="How do I get R (and RStudio)"}
 
@@ -277,21 +292,18 @@ Consider a car analogy.
     -   You can download R from the [R Project website](https://www.r-project.org/).
     -   You can download RStudio from the [Posit website](https://posit.co/download/rstudio-desktop/).
 
-
-:::{.fragment}
+::: fragment
 -   Run R and RStudio from LUapps:
     -   [LUapps](https://lts.lehigh.edu/luapps-powered-aws) is a virtual environment hosted by AWS.
     -   Accessed through a web browser (No VPN required).
     -   Both R and RStudio are located in the [**Common Environment**]{style="color:#edea2b"}
 
-<left>![](images/luapps.png){height="250"} &nbsp; &nbsp; ![](images/luapps2.png){height="250"}</left>
-
+<left>![](images/luapps.png){height="250"}     ![](images/luapps2.png){height="250"}</left>
 :::
 
+## Review - R and RStudio: {data-background="#000000" data-menu-title="Review 1"}
 
-## Review - R and RStudio:{data-background=#000000 data-menu-title="Review 1"}
-
-:::{.incremental}
+::: incremental
 -   [**R**]{style="color:#edea2b"} is a programming language initially built for statistical computing ("Engine").
 
 -   [**RStudio**]{style="color:#edea2b"} is an integrated development environment that makes working with R easier ("Body").
@@ -301,10 +313,255 @@ Consider a car analogy.
 -   Both R and RStudio, can be downloaded and installed locally, or run in a virtual environment through [LUapps]{style="color:#edea2b"}.
 :::
 
-![](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png){.absolute bottom=0 right=0 width="50%"}
+![](https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-White.png){.absolute bottom="0" right="0" width="50%"}
 
 # Topic 4 {data-menu-title="Topic 4"}
 
-[[**How**]{style="color:#edea2b"} do I work with R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
+[Working with R in RStudio]{style="font-size: 1.5em; text-align: center"}
 
-## Topic 4: [**How**]{style="color:#edea2b"} do I work with R (and RStudio)? {data-menu-title="Working with R"} 
+## Topic 4: Working with R in RStudio {data-menu-title="R in RStudio"}
+
+<p>
+
+<center>
+
+<img src="./images/r_ui.png" width="80%"/>
+
+</center>
+
+</p>
+
+::: {.absolute top="45" left="0" width="100%"}
+::: fragment
+<p>
+
+<center>
+
+<a href="https://lts.lehigh.edu/luapps-powered-aws/"> <img src="./images/rstudio.png" width="80%"/> </a>
+
+</center>
+
+</p>
+:::
+:::
+
+## Review - R in RStudio: {data-background="#000000" data-menu-title="Review 2"}
+
+::: fragment
+-   RStudio IDE:
+
+    - Four main windows that create organization
+    - Customizeable
+:::
+
+::: {.absolute top="45" left="0" width="100%"}
+::: {.fragment .fade-in-then-out}
+<p>
+
+<center>
+
+<img src="./images/rstudio2.png" width="80%"/>
+
+</center>
+
+</p>
+:::
+:::
+
+::: fragment
+-   Basic things to remember about R:
+    
+    - The [Working directory]{style="color:#edea2b"} is where R will look for things (by default).
+    - R is [case-sensitive]{style="color:#edea2b"}.
+    - R is a calculator.
+    - R can be used to store ([assignments]{style="color:#edea2b"}) one or more values ([concatenation]{style="color:#edea2b"}) as objects.
+:::
+
+# Topic 5 {data-menu-title="Topic 5"}
+
+[Objects in R]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 5: Objects in R {data-menu-title="Objects in R"}
+
+R largely revolves around two things: [**objects**]{style="color:#edea2b"} and [**functions**]{style="color:#edea2b"}.
+
+<center><b>Define objects > Apply functions > Repeat!</b></center>
+
+. . .
+
+<br/>
+
+For example, we defined an object called "n":
+
+```{r}
+#| echo: true
+#| eval: true
+n <- c(2, 3, 5, 8, 13, 21, 34, 55)
+```
+
+. . .
+
+We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the mean function:
+
+```{r}
+#| echo: true
+#| eval: true
+avg.n <- mean(n)
+avg.n
+```
+
+## Topic 5: Objects in R {data-menu-title="Objects types"}
+-   Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.
+
+-   Objects are essentially data that have a particular [**type**]{style="color:#edea2b"} and [**structure**]{style="color:#edea2b"}.
+
+::: {.fragment .fade-in-then-out}
+-   There are six basic [**type**]{style="color:#edea2b"} (classes) of data in R:
+
+    1. Logical
+    2. Double
+    3. Integer
+    4. Complex
+    5. Character
+    6. Factors - special case of Integer with Character labels
+:::
+
+. . .
+
+::: {.absolute top="180" left="0" width="100%"}
+::: panel-tabset
+### Logical
+Objects often created via comparison(s)
+```{r}
+#| echo: true
+#| eval: true
+x <- 1; y <- 2          # Create objects x and y
+z <- x > y              # Is x larger than y? 
+z                       # Print the logical value
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+typeof(z)               # Print the data type of z
+```
+:::
+
+### Double*
+Numbers, often approximated; default data type in R*
+```{r}
+#| echo: true
+#| eval: true
+x <- 10.5               # Define object x
+x                       # Print x
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+typeof(x)               # Print the data type of x
+```
+:::
+
+### Integer
+Whole numbers; a number that is not a fraction
+```{r}
+#| echo: true
+#| eval: true
+x <- 10                             # Define object x
+x                                   # Print x
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+typeof(x)                           # Print the data type of x
+```
+:::
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+y <- as.integer(10)                 # Declare as integer
+z <- 10L                            # Declare as integer by appending with "L"
+c(typeof(x),typeof(y),typeof(z))    # Print the data type of x
+```
+:::
+
+### Complex
+Any number that can be written as a + bi, where i is the imaginary unit and a and b are real numbers
+```{r}
+#| echo: true
+#| eval: true
+x <- 1 + 2i             # Create a complex number x
+x                       # Print the value of x
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+typeof(x)               # Print the data type of x
+```
+:::
+
+### Character
+Used to represent string values in R
+```{r}
+#| echo: true
+#| eval: true
+name <- "Jeremy Mack"         # Assign character string
+name                          # Print the character string
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+x <- as.character(3.14)       # Declare number as character string
+y <- "3.14"                   # Declare as character with " "
+c(x,y)                        # Print the character strings
+```
+:::
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+c(typeof(x),typeof(y))        # Print the data type of x
+```
+:::
+
+### Factor
+Fixed set of possible values (categorical variables); displayed as characters stored as integers
+```{r}
+#| echo: true
+#| eval: true
+x <- c("A","B","C","D")       # Create a vector of factor levels
+x <- as.factor(x)             # Declare as factor
+x                             # Print the value of x
+```
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+typeof(x)                     # Print the data type of x
+```
+:::
+
+::: fragment
+```{r}
+#| echo: true
+#| eval: true
+str(x)                        # Print the structure of x
+```
+:::
+
+:::
+:::
+

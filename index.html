@@ -27,6 +27,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="custom.css">
@@ -368,7 +432,7 @@
 </section>
 <section id="structure-of-the-presentation" class="slide level2" data-menu-title="Presentation outline">
 <h2>Structure of the presentation</h2>
-<p>The presentation is split into five topics:</p>
+<p>The presentation is split into seven topics:</p>
 <div class="fragment">
 <ul>
 <li><p>Topic 1: &nbsp;&nbsp; <span style="color:#edea2b"><strong>What</strong></span> is R (and RStudio)?</p></li>
@@ -378,17 +442,21 @@
 </div>
 <div class="fragment">
 <ul>
-<li><p>Topic 4: &nbsp;&nbsp; <span style="color:#edea2b"><strong>How</strong></span> do I work with R (and RStudio)?</p>
+<li><p>Topic 4: &nbsp;&nbsp; Working with R in RStudio</p>
 <ul>
+<li>User Interface</li>
 <li>R Environment</li>
-<li>Objects - Data Types and Structures</li>
-<li>Functions and Packages</li>
 </ul></li>
+<li><p>Topic 5: &nbsp;&nbsp; Objects in R</p>
+<ul>
+<li>Data Types and Structures</li>
+</ul></li>
+<li><p>Topic 6: &nbsp;&nbsp; Functions and Packages</p></li>
 </ul>
 </div>
 <div>
 <ul>
-<li class="fragment">Topic 5: &nbsp;&nbsp; Additional Resources</li>
+<li class="fragment">Topic 7: &nbsp;&nbsp; Additional Resources</li>
 </ul>
 </div>
 <p><img data-src="images/r_learners.png" class="absolute" style="bottom: 0px; right: 0px; width: 50%; height: 50%; "></p>
@@ -396,7 +464,7 @@
 <section>
 <section id="topic-1" class="title-slide slide level1 center" data-menu-title="Topic 1">
 <h1>Topic 1</h1>
-<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>What</strong></span> is R (and RStudio)?</span></p>
+<p><span style="color:#edea2b"><strong>What</strong></span> is R (and RStudio)?</p>
 </section>
 <section id="what-is-r" class="slide level2" data-menu-title="What is R">
 <h2><span style="color:#edea2b"><strong>What</strong></span> is R?</h2>
@@ -421,7 +489,7 @@
 
 </div><div class="column" style="width:30%;">
 <center>
-<img data-src="images/R_logo.png" style="width:90.0%">
+<p><img data-src="images/R_logo.png" style="width:90.0%"></p>
 </center>
 </div>
 </div>
@@ -462,7 +530,7 @@
 
 </div><div class="column" style="width:30%;">
 <center>
-<img data-src="images/rstudio_hex.png" style="width:90.0%">
+<p><img data-src="images/rstudio_hex.png" style="width:90.0%"></p>
 </center>
 </div>
 </div>
@@ -470,7 +538,7 @@
 <section>
 <section id="topic-2" class="title-slide slide level1 center" data-menu-title="Topic 2">
 <h1>Topic 2</h1>
-<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>Why</strong></span> use R (and RStudio)?</span></p>
+<p><span style="color:#edea2b"><strong>Why</strong></span> use R (and RStudio)?</p>
 </section>
 <section id="why-use-r" class="slide level2" data-menu-title="Why use R">
 <h2><span style="color:#edea2b"><strong>Why</strong></span> use R?</h2>
@@ -499,7 +567,7 @@
 
 </div><div class="column" style="width:30%;">
 <center>
-<img data-src="images/R_logo.png" style="width:90.0%">
+<p><img data-src="images/R_logo.png" style="width:90.0%"></p>
 </center>
 </div><div class="fragment fade-in-then-out">
 <p><img data-src="images/r_community.png" class="absolute" style="top: 5%; right: 0%; width: 40%; "></p>
@@ -541,7 +609,7 @@
 
 </div><div class="column" style="width:30%;">
 <center>
-<img data-src="images/rstudio_hex.png" style="width:90.0%">
+<p><img data-src="images/rstudio_hex.png" style="width:90.0%"></p>
 </center>
 </div>
 </div>
@@ -563,18 +631,18 @@
 
 </div><div class="column" style="width:44%;">
 <center>
-<img data-src="images/car_engine.jpg" style="width:90.0%">
+<p><img data-src="images/car_engine.jpg" style="width:90.0%"></p>
 </center>
 </div>
 </div>
-<ul>
-<li>You need R to run RStudio, but not RStudio to run R.</li>
-</ul>
+<div class="fragment">
+<p><span style="color:#edea2b">* You need R to run RStudio, but not RStudio to run R.</span></p>
+</div>
 </section></section>
 <section>
 <section id="topic-3" class="title-slide slide level1 center" data-menu-title="Topic 3">
 <h1>Topic 3</h1>
-<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</span></p>
+<p><span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</p>
 </section>
 <section id="topic-3-how-do-i-get-r-and-rstudio" class="slide level2" data-menu-title="How do I get R (and RStudio)">
 <h2>Topic 3: <span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</h2>
@@ -612,12 +680,255 @@
 <section>
 <section id="topic-4" class="title-slide slide level1 center" data-menu-title="Topic 4">
 <h1>Topic 4</h1>
-<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>How</strong></span> do I work with R (and RStudio)?</span></p>
+<p><span style="font-size: 1.5em; text-align: center">Working with R in RStudio</span></p>
 </section>
-<section id="topic-4-how-do-i-work-with-r-and-rstudio" class="slide level2" data-menu-title="Working with R">
-<h2>Topic 4: <span style="color:#edea2b"><strong>How</strong></span> do I work with R (and RStudio)?</h2>
+<section id="topic-4-working-with-r-in-rstudio" class="slide level2" data-menu-title="R in RStudio">
+<h2>Topic 4: Working with R in RStudio</h2>
+<p>
+</p><center>
+<p><img src="./images/r_ui.png" width="80%"></p>
+</center>
+<p></p>
+<div class="absolute" style="top: 45px; left: 0px; width: 100%; ">
+<div class="fragment">
+<p>
+</p><center>
+<p><a href="https://lts.lehigh.edu/luapps-powered-aws/"> <img src="./images/rstudio.png" width="80%"> </a></p>
+</center>
+<p></p>
+</div>
+</div>
+</section>
+<section id="review---r-in-rstudio" class="slide level2" data-background="#000000" data-menu-title="Review 2">
+<h2>Review - R in RStudio:</h2>
+<div class="fragment">
+<ul>
+<li><p>RStudio IDE:</p>
+<ul>
+<li>Four main windows that create organization</li>
+<li>Customizeable</li>
+</ul></li>
+</ul>
+</div>
+<div class="absolute" style="top: 45px; left: 0px; width: 100%; ">
+<div class="fragment fade-in-then-out">
+<p>
+</p><center>
+<p><img src="./images/rstudio2.png" width="80%"></p>
+</center>
+<p></p>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Basic things to remember about R:</p>
+<ul>
+<li>The <span style="color:#edea2b">Working directory</span> is where R will look for things (by default).</li>
+<li>R is <span style="color:#edea2b">case-sensitive</span>.</li>
+<li>R is a calculator.</li>
+<li>R can be used to store (<span style="color:#edea2b">assignments</span>) one or more values (<span style="color:#edea2b">concatenation</span>) as objects.</li>
+</ul></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="topic-5" class="title-slide slide level1 center" data-menu-title="Topic 5">
+<h1>Topic 5</h1>
+<p><span style="font-size: 1.5em; text-align: center">Objects in R</span></p>
+</section>
+<section id="topic-5-objects-in-r" class="slide level2" data-menu-title="Objects in R">
+<h2>Topic 5: Objects in R</h2>
+<p>R largely revolves around two things: <span style="color:#edea2b"><strong>objects</strong></span> and <span style="color:#edea2b"><strong>functions</strong></span>.</p>
+<center>
+<b>Define objects &gt; Apply functions &gt; Repeat!</b>
+</center>
+<div class="fragment">
+<p><br></p>
+<p>For example, we defined an object called “n”:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">21</span>, <span class="dv">34</span>, <span class="dv">55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="fragment">
+<p>We can then apply a function to our object. Lets say we’re interested in the average, so we’ll apply the mean function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>avg.n <span class="ot">&lt;-</span> <span class="fu">mean</span>(n)</span>
+<span id="cb2-2"><a href="#cb2-2"></a>avg.n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.625</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-5-objects-in-r-1" class="slide level2" data-menu-title="Objects types">
+<h2>Topic 5: Objects in R</h2>
+<ul>
+<li><p>Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.</p></li>
+<li><p>Objects are essentially data that have a particular <span style="color:#edea2b"><strong>type</strong></span> and <span style="color:#edea2b"><strong>structure</strong></span>.</p></li>
+</ul>
+<div class="fragment fade-in-then-out">
+<ul>
+<li><p>There are six basic <span style="color:#edea2b"><strong>type</strong></span> (classes) of data in R:</p>
+<ol type="1">
+<li>Logical</li>
+<li>Double</li>
+<li>Integer</li>
+<li>Complex</li>
+<li>Character</li>
+<li>Factors - special case of Integer with Character labels</li>
+</ol></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="absolute" style="top: 180px; left: 0px; width: 100%; ">
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Logical</a></li><li><a href="#tabset-1-2">Double*</a></li><li><a href="#tabset-1-3">Integer</a></li><li><a href="#tabset-1-4">Complex</a></li><li><a href="#tabset-1-5">Character</a></li><li><a href="#tabset-1-6">Factor</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<p>Objects often created via comparison(s)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span>; y <span class="ot">&lt;-</span> <span class="dv">2</span>          <span class="co"># Create objects x and y</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>z <span class="ot">&lt;-</span> x <span class="sc">&gt;</span> y              <span class="co"># Is x larger than y? </span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>z                       <span class="co"># Print the logical value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">typeof</span>(z)               <span class="co"># Print the data type of z</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<p>Numbers, often approximated; default data type in R*</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>x <span class="ot">&lt;-</span> <span class="fl">10.5</span>               <span class="co"># Define object x</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>x                       <span class="co"># Print x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.5</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">typeof</span>(x)               <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<p>Whole numbers; a number that is not a fraction</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span>                             <span class="co"># Define object x</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>x                                   <span class="co"># Print x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">typeof</span>(x)                           <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">10</span>)                 <span class="co"># Declare as integer</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a>z <span class="ot">&lt;-</span> 10L                            <span class="co"># Declare as integer by appending with "L"</span></span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fu">c</span>(<span class="fu">typeof</span>(x),<span class="fu">typeof</span>(y),<span class="fu">typeof</span>(z))    <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"  "integer" "integer"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-4">
+<p>Any number that can be written as a + bi, where i is the imaginary unit and a and b are real numbers</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> 2i             <span class="co"># Create a complex number x</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>x                       <span class="co"># Print the value of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1+2i</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">typeof</span>(x)               <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "complex"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-5">
+<p>Used to represent string values in R</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>name <span class="ot">&lt;-</span> <span class="st">"Jeremy Mack"</span>         <span class="co"># Assign character string</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>name                          <span class="co"># Print the character string</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jeremy Mack"</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fl">3.14</span>)       <span class="co"># Declare number as character string</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>y <span class="ot">&lt;-</span> <span class="st">"3.14"</span>                   <span class="co"># Declare as character with " "</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="fu">c</span>(x,y)                        <span class="co"># Print the character strings</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "3.14" "3.14"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">c</span>(<span class="fu">typeof</span>(x),<span class="fu">typeof</span>(y))        <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character" "character"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-6">
+<p>Fixed set of possible values (categorical variables); displayed as characters stored as integers</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>)       <span class="co"># Create a vector of factor levels</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>x <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(x)             <span class="co"># Declare as factor</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>x                             <span class="co"># Print the value of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] A B C D
+Levels: A B C D</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">typeof</span>(x)                     <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">str</span>(x)                        <span class="co"># Print the structure of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> Factor w/ 4 levels "A","B","C","D": 1 2 3 4</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -831,6 +1142,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
