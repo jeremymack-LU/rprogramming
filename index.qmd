@@ -565,3 +565,40 @@ str(x)                        # Print the structure of x
 :::
 :::
 
+## Topic 5: Objects in R {data-menu-title="Objects types"}
+-   Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.
+
+-   Objects are essentially data that have a particular [**type**]{style="color:#edea2b"} and [**structure**]{style="color:#edea2b"}.
+
+::: {.fragment .fade-in-then-out fragment-index=1}
+-   There are four basic [**structures**]{style="color:#edea2b"} of data in R:
+
+    1. Scalar
+    2. Vector
+    3. Matrix
+    4. Data frames (and Tibbles)
+:::
+
+::: {.fragment .fade-in fragment-index=2}
+::: {.absolute top="180" left="0" width="100%"}
+::: panel-tabset
+### Scalar
+::: columns
+::: column
+![](images/objects2.png)
+:::
+::: column
+::: {.fragment .fade-in-then-out fragment-index=2}
+-   **Scalar objects:**
+
+    1. Hold only one value at a time
+    2. Can be used to build more complex objects
+:::
+::: {.fragment .fade-in fragment-index=3}
+Test
+:::
+:::
+:::
+:::
+:::
+:::
