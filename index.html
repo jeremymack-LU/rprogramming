@@ -382,6 +382,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="index_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="index_files/libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -451,7 +453,7 @@
 <ul>
 <li>Data Types and Structures</li>
 </ul></li>
-<li><p>Topic 6: &nbsp;&nbsp; Functions and Packages</p></li>
+<li><p>Topic 6: &nbsp;&nbsp; Functions (and Packages) in R</p></li>
 </ul>
 </div>
 <div>
@@ -723,7 +725,7 @@
 <ul>
 <li><p>Basic things to remember about R:</p>
 <ul>
-<li>The <span style="color:#edea2b">Working directory</span> is where R will look for things (by default).</li>
+<li>The <span style="color:#edea2b">working directory</span> is where R will look for things (by default).</li>
 <li>R is <span style="color:#edea2b">case-sensitive</span>.</li>
 <li>R is a calculator.</li>
 <li>R can be used to store (<span style="color:#edea2b">assignments</span>) one or more values (<span style="color:#edea2b">concatenation</span>) as objects.</li>
@@ -738,19 +740,25 @@
 </section>
 <section id="topic-5-objects-in-r" class="slide level2" data-menu-title="Objects in R">
 <h2>Topic 5: Objects in R</h2>
-<p>R largely revolves around two things: <span style="color:#edea2b"><strong>objects</strong></span> and <span style="color:#edea2b"><strong>functions</strong></span>.</p>
+<ul>
+<li>R largely revolves around two things: <span style="color:#edea2b"><strong>objects</strong></span> and <span style="color:#edea2b"><strong>functions</strong></span>.</li>
+</ul>
 <center>
 <b>Define objects &gt; Apply functions &gt; Repeat!</b>
 </center>
 <div class="fragment">
 <p><br></p>
-<p>For example, we defined an object called “n”:</p>
+<ul>
+<li>For example, we defined an object called “n”:</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">21</span>, <span class="dv">34</span>, <span class="dv">55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
-<p>We can then apply a function to our object. Lets say we’re interested in the average, so we’ll apply the mean function:</p>
+<ul>
+<li>We can then apply a function to our object. Lets say we’re interested in the average, so we’ll apply the <code>mean</code> function:</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>avg.n <span class="ot">&lt;-</span> <span class="fu">mean</span>(n)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>avg.n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -760,13 +768,13 @@
 </div>
 </div>
 </section>
-<section id="topic-5-objects-in-r-1" class="slide level2" data-menu-title="Objects types">
+<section id="topic-5-objects-in-r-1" class="slide level2" data-menu-title="Object types">
 <h2>Topic 5: Objects in R</h2>
 <ul>
 <li><p>Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.</p></li>
 <li><p>Objects are essentially data that have a particular <span style="color:#edea2b"><strong>type</strong></span> and <span style="color:#edea2b"><strong>structure</strong></span>.</p></li>
 </ul>
-<div class="fragment fade-in-then-out">
+<div class="fragment fade-in-then-out" data-fragment-index="1">
 <ul>
 <li><p>There are six basic <span style="color:#edea2b"><strong>type</strong></span> (classes) of data in R:</p>
 <ol type="1">
@@ -779,8 +787,8 @@
 </ol></li>
 </ul>
 </div>
-<div class="fragment">
 <div class="absolute" style="top: 180px; left: 0px; width: 100%; ">
+<div class="fragment" data-fragment-index="2">
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Logical</a></li><li><a href="#tabset-1-2">Double*</a></li><li><a href="#tabset-1-3">Integer</a></li><li><a href="#tabset-1-4">Complex</a></li><li><a href="#tabset-1-5">Character</a></li><li><a href="#tabset-1-6">Factor</a></li></ul>
 <div class="tab-content">
@@ -794,7 +802,7 @@
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">typeof</span>(z)               <span class="co"># Print the data type of z</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -812,7 +820,7 @@
 <pre><code>[1] 10.5</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="3">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">typeof</span>(x)               <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -830,7 +838,7 @@
 <pre><code>[1] 10</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">typeof</span>(x)                           <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -838,7 +846,7 @@
 </div>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>y <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">10</span>)                 <span class="co"># Declare as integer</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>z <span class="ot">&lt;-</span> 10L                            <span class="co"># Declare as integer by appending with "L"</span></span>
@@ -858,7 +866,7 @@
 <pre><code>[1] 1+2i</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">typeof</span>(x)               <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -876,7 +884,7 @@
 <pre><code>[1] "Jeremy Mack"</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>x <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fl">3.14</span>)       <span class="co"># Declare number as character string</span></span>
 <span id="cb24-2"><a href="#cb24-2"></a>y <span class="ot">&lt;-</span> <span class="st">"3.14"</span>                   <span class="co"># Declare as character with " "</span></span>
@@ -886,7 +894,7 @@
 </div>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">c</span>(<span class="fu">typeof</span>(x),<span class="fu">typeof</span>(y))        <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -906,7 +914,7 @@
 Levels: A B C D</code></pre>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">typeof</span>(x)                     <span class="co"># Print the data type of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -914,7 +922,7 @@ Levels: A B C D</code></pre>
 </div>
 </div>
 </div>
-<div class="fragment">
+<div class="fragment" data-fragment-index="2">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">str</span>(x)                        <span class="co"># Print the structure of x</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -928,7 +936,7 @@ Levels: A B C D</code></pre>
 </div>
 </div>
 </section>
-<section id="topic-5-objects-in-r-2" class="slide level2" data-menu-title="Objects types">
+<section id="topic-5-objects-in-r-2" class="slide level2" data-menu-title="Object structures">
 <h2>Topic 5: Objects in R</h2>
 <ul>
 <li><p>Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.</p></li>
@@ -941,35 +949,593 @@ Levels: A B C D</code></pre>
 <li>Scalar</li>
 <li>Vector</li>
 <li>Matrix</li>
-<li>Data frames (and Tibbles)</li>
+<li>Data frame (and Tibble)</li>
 </ol></li>
 </ul>
 </div>
 <div class="fragment fade-in" data-fragment-index="2">
 <div class="absolute" style="top: 180px; left: 0px; width: 100%; ">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Scalar</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Scalar</a></li><li><a href="#tabset-2-2">Vector</a></li><li><a href="#tabset-2-3">Matrix</a></li><li><a href="#tabset-2-4">Data frame (and Tibble)</a></li><li><a href="#tabset-2-5">Tibble</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="columns">
-<div class="column">
+<div class="column" style="width:50%;">
 <p><img data-src="images/objects2.png"></p>
-</div><div class="column">
-<div class="fragment fade-in-then-out" data-fragment-index="2">
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49%;">
 <ul>
-<li><p><strong>Scalar objects:</strong></p>
+<li><strong>Scalar objects:</strong></li>
+</ul>
+<div class="fragment fade-in-then-out" data-fragment-index="2">
 <ol type="1">
 <li>Hold only one value at a time</li>
 <li>Can be used to build more complex objects</li>
+</ol>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in" data-fragment-index="3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>x <span class="ot">&lt;-</span> <span class="fl">10.5</span> </span>
+<span id="cb34-2"><a href="#cb34-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">str</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num 10.5</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/objects3.png"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49%;">
+<ul>
+<li><strong>Vector objects:</strong></li>
+</ul>
+<div class="fragment fade-in-then-out" data-fragment-index="3">
+<ol type="1">
+<li>Hold several values stored as a single object</li>
+<li>Either numeric or character (not both!)</li>
+</ol>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in-then-out" data-fragment-index="4">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="dv">55</span>) </span>
+<span id="cb38-2"><a href="#cb38-2"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2  3  5  8 13 21 34 55</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">str</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> num [1:8] 2 3 5 8 13 21 34 55</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in" data-fragment-index="5">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="st">"55"</span>) </span>
+<span id="cb42-2"><a href="#cb42-2"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "2"  "3"  "5"  "8"  "13" "21" "34" "55"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">str</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr [1:8] "2" "3" "5" "8" "13" "21" "34" "55"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/objects4.png"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49%;">
+<ul>
+<li><strong>Matrix objects:</strong></li>
+</ul>
+<div class="fragment fade-in-then-out" data-fragment-index="5">
+<ol type="1">
+<li>Large data structure</li>
+<li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
+<li>Either numeric or character (not both!)</li>
+</ol>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in-then-out" data-fragment-index="6">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb46-3"><a href="#cb46-3"></a>z <span class="ot">&lt;-</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb46-4"><a href="#cb46-4"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y,z)</span>
+<span id="cb46-5"><a href="#cb46-5"></a><span class="fu">class</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "matrix" "array" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> int [1:5, 1:3] 1 2 3 4 5 6 7 8 9 10 ...
+ - attr(*, "dimnames")=List of 2
+  ..$ : NULL
+  ..$ : chr [1:3] "x" "y" "z"</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in" data-fragment-index="7">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb50-2"><a href="#cb50-2"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb50-3"><a href="#cb50-3"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="st">'14'</span>,<span class="dv">15</span>)</span>
+<span id="cb50-4"><a href="#cb50-4"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y,z)</span>
+<span id="cb50-5"><a href="#cb50-5"></a><span class="fu">class</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "matrix" "array" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr [1:5, 1:3] "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" ...
+ - attr(*, "dimnames")=List of 2
+  ..$ : NULL
+  ..$ : chr [1:3] "x" "y" "z"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-4">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/objects4.png"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49%;">
+<ul>
+<li><strong>Data frame objects:</strong></li>
+</ul>
+<div class="fragment fade-in-then-out" data-fragment-index="7">
+<ol type="1">
+<li>Large data structure</li>
+<li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
+<li>Can be a mix of data types</li>
+</ol>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in" data-fragment-index="8">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
+<span id="cb54-5"><a href="#cb54-5"></a><span class="fu">class</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   5 obs. of  3 variables:
+ $ survey.id: num  1 2 3 4 5
+ $ sex      : chr  "m" "m" "m" "f" ...
+ $ age      : num  99 46 23 54 23</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-5">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="images/objects4.png"></p>
+</div><div class="column" style="width:1%;">
+
+</div><div class="column" style="width:49%;">
+<ul>
+<li><strong>Tibble objects:</strong></li>
+</ul>
+<div class="fragment fade-in-then-out" data-fragment-index="8">
+<ol type="1">
+<li>Large data structure</li>
+<li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
+<li>Can be a mix of data types</li>
+<li>“Lazy data frames”
+<ul>
+<li>Do less and complain more.</li>
+</ul></li>
+</ol>
+</div>
+<div class="absolute" style="top: 125px; left: 560px; ">
+<div class="fragment fade-in" data-fragment-index="9">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb58-2"><a href="#cb58-2"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb58-3"><a href="#cb58-3"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb58-4"><a href="#cb58-4"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
+<span id="cb58-5"><a href="#cb58-5"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
+<span id="cb58-6"><a href="#cb58-6"></a><span class="fu">class</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [5 × 3] (S3: tbl_df/tbl/data.frame)
+ $ survey id: num [1:5] 1 2 3 4 5
+ $ sex      : chr [1:5] "m" "m" "m" "f" ...
+ $ age      : num [1:5] 99 46 23 54 23</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="topic-6" class="title-slide slide level1 center" data-menu-title="Topic 6">
+<h1>Topic 6</h1>
+<p><span style="font-size: 1.5em; text-align: center">Functions (and Packages) in R</span></p>
+</section>
+<section id="topic-6-functions-in-r" class="slide level2" data-menu-title="Functions in R">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li>R largely revolves around two things: <span style="color:#edea2b"><strong>objects</strong></span> and <span style="color:#edea2b"><strong>functions</strong></span>.</li>
+</ul>
+<center>
+<b>Define objects &gt; Apply functions &gt; Repeat!</b>
+</center>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>For example, we defined an object called “n”:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">21</span>, <span class="dv">34</span>, <span class="dv">55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>We can then apply a function to our object. Lets say we’re interested in the average, so we’ll apply the <code>mean</code> function:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>avg.n <span class="ot">&lt;-</span> <span class="fu">mean</span>(n)</span>
+<span id="cb63-2"><a href="#cb63-2"></a>avg.n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.625</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-6-functions-in-r-1" class="slide level2" data-menu-title="Recipes">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><span style="color:#edea2b">Functions</span> are procedures that typically take one or more objects as <span style="color:#edea2b">arguments</span> (i.e., inputs), does something with them, then returns a new object (i.e., result).</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Cooking analogy:</p>
+<ul>
+<li>Functions (recipe) + Arguments (ingredients) = Result (meal)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Arguments (ingredients):</p>
+<ul>
+<li>Can be required, optional, or set by default</li>
+<li>Do not need to be assigned by argument name, if specified in order (recipe)</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>For example, lets consider the <code>split</code> function:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">args</span>(split)     <span class="co"># Display argument names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (x, f, drop = FALSE, ...) 
+NULL</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-6-functions-in-r-2" class="slide level2" data-menu-title="User-defined functions">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><p>There are two basic types of functions in R:</p>
+<ol type="1">
+<li>User-defined functions</li>
+</ol></li>
+</ul>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>ages     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>)</span>
+<span id="cb67-2"><a href="#cb67-2"></a></span>
+<span id="cb67-3"><a href="#cb67-3"></a>age_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb67-4"><a href="#cb67-4"></a>    summation <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb67-5"><a href="#cb67-5"></a>    summation <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb67-6"><a href="#cb67-6"></a>}</span>
+<span id="cb67-7"><a href="#cb67-7"></a></span>
+<span id="cb67-8"><a href="#cb67-8"></a><span class="fu">age_mean</span>(ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 49</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-6-functions-in-r-3" class="slide level2" data-menu-title="Packages">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><p>There are two basic types of functions in R:</p>
+<ol type="1">
+<li>User-defined functions</li>
+<li>Built-in functions that are loaded via <span style="color:#edea2b">Packages</span> (Community development!)</li>
+</ol></li>
+</ul>
+<p><img data-src="images/r_packages.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></p>
+</section>
+<section id="topic-6-functions-in-r-4" class="slide level2" data-menu-title="Community development">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><p>Packages in R:</p>
+<ul>
+<li>R packages are used to install built-in functions into the R Environment.</li>
+<li>In addition to functions, packages also include data sets, help documentation, and how-to examples (i.e., vignette).</li>
+</ul></li>
+</ul>
+<p><img data-src="images/r_packages.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></p>
+<div class="fragment">
+<ul>
+<li>When you install R for the first time, you are installing <code>base R</code>, which includes functions written by the original authors of the R language.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Additional packages are developed by the <a href="https://cran.case.edu/">R community</a>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>How do we get packages loaded into R?</li>
+</ul>
+</div>
+</section>
+<section id="topic-6-functions-in-r-5" class="slide level2" data-menu-title="Loading packages">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><p>How do we get packages loaded into R?</p></li>
+<li><p>Two step process:</p>
+<ol type="1">
+<li><span style="color:#edea2b">Install</span> the package - do this once with <code>install.packages</code> function</li>
+<li><span style="color:#edea2b">Load</span> the package into R - do this every time with <code>library</code> function</li>
+</ol></li>
+</ul>
+<div class="fragment">
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Programmatically</a></li><li><a href="#tabset-3-2">RStudio IDE</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Traditional methods</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># Install - quotes are necessary</span></span>
+<span id="cb69-3"><a href="#cb69-3"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb69-4"><a href="#cb69-4"></a><span class="fu">library</span>(ggplot2)                 <span class="co"># Load into R environment - quotes are optional</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb69-6"><a href="#cb69-6"></a></span>
+<span id="cb69-7"><a href="#cb69-7"></a><span class="co"># More efficient way</span></span>
+<span id="cb69-8"><a href="#cb69-8"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)       <span class="co"># Install pacman package</span></span>
+<span id="cb69-9"><a href="#cb69-9"></a><span class="fu">library</span>(pacman)                  <span class="co"># Load into R environment</span></span>
+<span id="cb69-10"><a href="#cb69-10"></a><span class="fu">p_load</span>(ggplot2, dplyr)           <span class="co"># Use p_load function to install and load multiple packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-3-2">
+<p><img data-src="images/explorer1.png" class="absolute" style="left: 0px; bottom: 0px; height: 50%; "></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="topic-6-functions-in-r-6" class="slide level2" data-menu-title="Tidyverse">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li><span style="color:#edea2b">Tidyverse</span> - collection of R packages for data science <img data-src="images/tidyverse.png" class="absolute" style="bottom: -10px; right: 275px; height: 50%; "> <img data-src="images/tidyverse2.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Underlying design philosophy, grammar, and data structures</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><a href="https://www.tidyverse.org">Supported by RStudio</a></li>
+</ul>
+</div>
+</section>
+<section id="topic-6-functions-in-r-7" class="slide level2" data-menu-title="Data process">
+<h2>Topic 6: Functions in R</h2>
+<div class="r-stack">
+<p><img data-src="images/tidy1.png"></p>
+<p><img data-src="images/tidy2.png" class="fragment"></p>
+<p><img data-src="images/tidy3.png" class="fragment"></p>
+</div>
+</section>
+<section id="topic-6-functions-in-r-8" class="slide level2" data-menu-title="Tidyverse install">
+<h2>Topic 6: Functions in R</h2>
+<ul>
+<li>Tidyverse packages can be installed and loaded individually:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Install and load individual Tidyverse packages</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>); <span class="fu">library</span>(dplyr)         <span class="co"># Install and load dplyr</span></span>
+<span id="cb70-3"><a href="#cb70-3"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>); <span class="fu">library</span> (ggplot2)    <span class="co"># Install and load ggplot</span></span>
+<span id="cb70-4"><a href="#cb70-4"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>); <span class="fu">library</span>(readr)         <span class="co"># Install and load readr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><img data-src="images/tidyverse2.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></p>
+<div class="fragment">
+<ul>
+<li>Or, in bulk, with the <code>tidyverse</code> package:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Install all Tidyverse packages</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>); <span class="fu">library</span>(tidyverse)  <span class="co">#Bulk tidyverse</span></span>
+<span id="cb71-3"><a href="#cb71-3"></a></span>
+<span id="cb71-4"><a href="#cb71-4"></a><span class="co"># List tidyverse packages</span></span>
+<span id="cb71-5"><a href="#cb71-5"></a><span class="fu">tidyverse_packages</span>(<span class="at">include_self=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "broom"         "cli"           "crayon"        "dbplyr"       
+ [5] "dplyr"         "dtplyr"        "forcats"       "ggplot2"      
+ [9] "googledrive"   "googlesheets4" "haven"         "hms"          
+[13] "httr"          "jsonlite"      "lubridate"     "magrittr"     
+[17] "modelr"        "pillar"        "purrr"         "readr"        
+[21] "readxl"        "reprex"        "rlang"         "rstudioapi"   
+[25] "rvest"         "stringr"       "tibble"        "tidyr"        
+[29] "xml2"         </code></pre>
+</div>
+</div>
+</div>
+<p><img data-src="images/tidyverse2.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></p>
+</section>
+<section id="review---objects-and-functions" class="slide level2" data-background="#000000" data-menu-title="Review 3 - Objects">
+<h2>Review - Objects and Functions:</h2>
+<div class="fragment">
+<ul>
+<li>Define objects &gt; Apply functions &gt; Repeat!</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Objects have a <span style="color:#edea2b">type</span> and <span style="color:#edea2b">structure</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<ul>
+<li><p>There are six basic types of data:</p>
+<ol type="1">
+<li>Logical</li>
+<li>Double - default data type in R</li>
+<li>Integer</li>
+<li>Complex</li>
+<li>Character</li>
+<li>Factors - Integer with Character labels</li>
+</ol></li>
+</ul>
+</div><div class="column">
+<ul>
+<li><p>There are four basic structures:</p>
+<ol type="1">
+<li>Scalar</li>
+<li>Vector</li>
+<li>Matrix</li>
+<li>Data frame (and Tibble)</li>
 </ol></li>
 </ul>
 </div>
-<div class="fragment fade-in" data-fragment-index="3">
-<p>Test</p>
 </div>
 </div>
+</section>
+<section id="review---objects-and-functions-1" class="slide level2" data-background="#000000" data-menu-title="Review 3 - Functions">
+<h2>Review - Objects and Functions:</h2>
+<ul>
+<li>Define objects &gt; Apply functions &gt; Repeat! <img data-src="images/tidyverse_hex.png" class="absolute" style="bottom: 0px; right: 0px; height: 40%; "></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Functions are used to work with objects in R.</p>
+<ul>
+<li>Functions (recipe) + Arguments (ingredients) = Result (meal)</li>
+</ul></li>
+</ul>
 </div>
+<div class="fragment">
+<ul>
+<li>Functions can be user-defined, or loaded via <span style="color:#edea2b">Packages</span>.</li>
+</ul>
 </div>
+<div class="fragment">
+<ul>
+<li><p>Getting packages into R is a two step process:</p>
+<ol type="1">
+<li><span style="color:#edea2b">Install</span> the package - do this once with <code>install.packages</code> function</li>
+<li><span style="color:#edea2b">Load</span> the package into R - do this every time with <code>library</code> function</li>
+</ol></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Tidyverse - collection of R packages for data science, supported by RStudio.</p>
+<ul>
+<li>Loaded in bulk with <code>tidyverse</code> function</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="exercise---getting-started-with-r" class="slide level2" data-menu-title="Exercise1">
+<h2>Exercise - Getting started with R</h2>
+<ul>
+<li><p>First, try the following:</p>
+<ol type="1">
+<li>Set your working directory to the Desktop.</li>
+<li>Download the file <span style="color:#edea2b">penguins.csv</span> using the following command:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/ghralb2cmkp562w/penguins.csv?dl=1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></li>
+</ul>
+<div class="fragment">
+<ul>
+<li><p>Next, try these additional steps:</p>
+<ol type="1">
+<li>Install and load the Tidyverse package <code>readr</code>.</li>
+<li>Using the <code>read_csv</code> function, read in penguins.csv.</li>
+<li>Assign the <span style="color:#edea2b">body_mass_g</span> variable to an object.</li>
+<li>Use this object to find the heaviest weight.</li>
+</ol></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Finally, try the following:</p>
+<ol type="1">
+<li>Create a folder on the Desktop called Data.</li>
+<li>Assign the first 100 rows of the penguin data set to an object, using the <code>head</code> function.</li>
+<li>Write it to a .csv file within your new Data folder.</li>
+</ol></li>
+</ul>
+</div>
+<div class="absolute" style="top: 100px; right: 0px; ">
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_4e6f2c03" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>

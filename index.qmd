@@ -86,7 +86,7 @@ The presentation is split into seven topics:
 
     -   Data Types and Structures
     
--   Topic 6:    Functions and Packages
+-   Topic 6:    Functions (and Packages) in R
 :::
 
 ::: incremental
@@ -371,7 +371,7 @@ Consider a car analogy.
 ::: fragment
 -   Basic things to remember about R:
     
-    - The [Working directory]{style="color:#edea2b"} is where R will look for things (by default).
+    - The [working directory]{style="color:#edea2b"} is where R will look for things (by default).
     - R is [case-sensitive]{style="color:#edea2b"}.
     - R is a calculator.
     - R can be used to store ([assignments]{style="color:#edea2b"}) one or more values ([concatenation]{style="color:#edea2b"}) as objects.
@@ -383,7 +383,7 @@ Consider a car analogy.
 
 ## Topic 5: Objects in R {data-menu-title="Objects in R"}
 
-R largely revolves around two things: [**objects**]{style="color:#edea2b"} and [**functions**]{style="color:#edea2b"}.
+-   R largely revolves around two things: [**objects**]{style="color:#edea2b"} and [**functions**]{style="color:#edea2b"}.
 
 <center><b>Define objects > Apply functions > Repeat!</b></center>
 
@@ -391,7 +391,7 @@ R largely revolves around two things: [**objects**]{style="color:#edea2b"} and [
 
 <br/>
 
-For example, we defined an object called "n":
+-   For example, we defined an object called "n":
 
 ```{r}
 #| echo: true
@@ -401,7 +401,7 @@ n <- c(2, 3, 5, 8, 13, 21, 34, 55)
 
 . . .
 
-We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the mean function:
+-   We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the `mean` function:
 
 ```{r}
 #| echo: true
@@ -410,12 +410,12 @@ avg.n <- mean(n)
 avg.n
 ```
 
-## Topic 5: Objects in R {data-menu-title="Objects types"}
+## Topic 5: Objects in R {data-menu-title="Object types"}
 -   Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.
 
 -   Objects are essentially data that have a particular [**type**]{style="color:#edea2b"} and [**structure**]{style="color:#edea2b"}.
 
-::: {.fragment .fade-in-then-out}
+::: {.fragment .fade-in-then-out fragment-index=1}
 -   There are six basic [**type**]{style="color:#edea2b"} (classes) of data in R:
 
     1. Logical
@@ -426,9 +426,8 @@ avg.n
     6. Factors - special case of Integer with Character labels
 :::
 
-. . .
-
 ::: {.absolute top="180" left="0" width="100%"}
+::: {.fragment fragment-index=2}
 ::: panel-tabset
 ### Logical
 Objects often created via comparison(s)
@@ -440,7 +439,7 @@ z <- x > y              # Is x larger than y?
 z                       # Print the logical value
 ```
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -457,7 +456,7 @@ x <- 10.5               # Define object x
 x                       # Print x
 ```
 
-::: fragment
+::: {.fragment fragment-index=3}
 ```{r}
 #| echo: true
 #| eval: true
@@ -474,7 +473,7 @@ x <- 10                             # Define object x
 x                                   # Print x
 ```
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -482,7 +481,7 @@ typeof(x)                           # Print the data type of x
 ```
 :::
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -501,7 +500,7 @@ x <- 1 + 2i             # Create a complex number x
 x                       # Print the value of x
 ```
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -518,7 +517,7 @@ name <- "Jeremy Mack"         # Assign character string
 name                          # Print the character string
 ```
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -528,7 +527,7 @@ c(x,y)                        # Print the character strings
 ```
 :::
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -546,7 +545,7 @@ x <- as.factor(x)             # Declare as factor
 x                             # Print the value of x
 ```
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -554,7 +553,7 @@ typeof(x)                     # Print the data type of x
 ```
 :::
 
-::: fragment
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -564,8 +563,9 @@ str(x)                        # Print the structure of x
 
 :::
 :::
+:::
 
-## Topic 5: Objects in R {data-menu-title="Objects types"}
+## Topic 5: Objects in R {data-menu-title="Object structures"}
 -   Objects come in many different shapes and sizes - like a number, a dataset, or the results of a statistical test.
 
 -   Objects are essentially data that have a particular [**type**]{style="color:#edea2b"} and [**structure**]{style="color:#edea2b"}.
@@ -576,7 +576,7 @@ str(x)                        # Print the structure of x
     1. Scalar
     2. Vector
     3. Matrix
-    4. Data frames (and Tibbles)
+    4. Data frame (and Tibble)
 :::
 
 ::: {.fragment .fade-in fragment-index=2}
@@ -584,21 +584,479 @@ str(x)                        # Print the structure of x
 ::: panel-tabset
 ### Scalar
 ::: columns
-::: column
+::: {.column width="50%"}
 ![](images/objects2.png)
 :::
-::: column
-::: {.fragment .fade-in-then-out fragment-index=2}
+::: {.column width="1%"}
+:::
+::: {.column width="49%"}
 -   **Scalar objects:**
 
-    1. Hold only one value at a time
-    2. Can be used to build more complex objects
+::: {.fragment .fade-in-then-out fragment-index=2}
+
+  1. Hold only one value at a time
+  2. Can be used to build more complex objects
+    
 :::
+::: {.absolute top="125" left="560"}
 ::: {.fragment .fade-in fragment-index=3}
-Test
+```{r}
+#| echo: true
+#| eval: true
+x <- 10.5 
+x
+str(x)
+```
+:::
+:::
+:::
+:::
+### Vector
+::: columns
+::: {.column width="50%"}
+![](images/objects3.png)
+:::
+::: {.column width="1%"}
+:::
+::: {.column width="49%"}
+-   **Vector objects:**
+
+::: {.fragment .fade-in-then-out fragment-index=3}
+
+  1. Hold several values stored as a single object
+  2. Either numeric or character (not both!)
+    
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in-then-out fragment-index=4}
+```{r}
+#| echo: true
+#| eval: true
+n <- c(2,3,5,8,13,21,34,55) 
+n
+str(n)
+```
+:::
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in fragment-index=5}
+```{r}
+#| echo: true
+#| eval: true
+n <- c(2,3,5,8,13,21,34,"55") 
+n
+str(n)
+```
+:::
+:::
+:::
+:::
+### Matrix
+::: columns
+::: {.column width="50%"}
+![](images/objects4.png)
+:::
+::: {.column width="1%"}
+:::
+::: {.column width="49%"}
+-   **Matrix objects:**
+
+::: {.fragment .fade-in-then-out fragment-index=5}
+
+  1. Large data structure
+  2. Has 2-dimensions, representing its height (rows) and width (columns)
+  3. Either numeric or character (not both!)
+    
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in-then-out fragment-index=6}
+```{r}
+#| echo: true
+#| eval: true
+x <- 1:5
+y <- 6:10
+z <- 11:15
+m <- cbind(x,y,z)
+class(m)
+str(m)
+```
+:::
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in fragment-index=7}
+```{r}
+#| echo: true
+#| eval: true
+x <- 1:5
+y <- 6:10
+z <- c(11,12,13,'14',15)
+m <- cbind(x,y,z)
+class(m)
+str(m)
+```
+:::
+:::
+:::
+:::
+### Data frame (and Tibble)
+::: columns
+::: {.column width="50%"}
+![](images/objects4.png)
+:::
+::: {.column width="1%"}
+:::
+::: {.column width="49%"}
+-   **Data frame objects:**
+
+::: {.fragment .fade-in-then-out fragment-index=7}
+
+  1. Large data structure
+  2. Has 2-dimensions, representing its height (rows) and width (columns)
+  3. Can be a mix of data types
+    
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in fragment-index=8}
+```{r}
+#| echo: true
+#| eval: true
+survey <- data.frame(
+"survey id"  = c(1,2,3,4,5),
+"sex" = c("m","m","m","f","f"),
+"age" = c(99,46,23,54,23))
+class(survey)
+str(survey)
+```
+:::
+:::
+:::
+:::
+### Tibble
+::: columns
+::: {.column width="50%"}
+![](images/objects4.png)
+:::
+::: {.column width="1%"}
+:::
+::: {.column width="49%"}
+-   **Tibble objects:**
+
+::: {.fragment .fade-in-then-out fragment-index=8}
+
+  1. Large data structure
+  2. Has 2-dimensions, representing its height (rows) and width (columns)
+  3. Can be a mix of data types
+  4. "Lazy data frames"
+        - Do less and complain more.
+    
+:::
+::: {.absolute top="125" left="560"}
+::: {.fragment .fade-in fragment-index=9}
+```{r}
+#| echo: true
+#| eval: true
+library(tibble)
+survey <- tibble(
+"survey id"  = c(1,2,3,4,5),
+"sex" = c("m","m","m","f","f"),
+"age" = c(99,46,23,54,23))
+class(survey)
+str(survey)
+```
 :::
 :::
 :::
 :::
 :::
+:::
+:::
+
+# Topic 6 {data-menu-title="Topic 6"}
+
+[Functions (and Packages) in R]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 6: Functions in R {data-menu-title="Functions in R"}
+
+-   R largely revolves around two things: [**objects**]{style="color:#edea2b"} and [**functions**]{style="color:#edea2b"}.
+
+<center><b>Define objects > Apply functions > Repeat!</b></center>
+
+<br/>
+
+. . .
+
+-   For example, we defined an object called "n":
+
+```{r}
+#| echo: true
+#| eval: true
+n <- c(2, 3, 5, 8, 13, 21, 34, 55)
+```
+
+-   We can then apply a function to our object. Lets say we're interested in the average, so we'll apply the `mean` function:
+
+```{r}
+#| echo: true
+#| eval: true
+avg.n <- mean(n)
+avg.n
+```
+
+## Topic 6: Functions in R {data-menu-title="Recipes"}
+-   [Functions]{style="color:#edea2b"} are procedures that typically take one or more objects as [arguments]{style="color:#edea2b"} (i.e., inputs), does something with them, then returns a new object (i.e., result).
+
+. . .
+
+-   Cooking analogy:
+      
+    - Functions (recipe) + Arguments (ingredients) = Result (meal)
+    
+. . .
+
+-   Arguments (ingredients):
+
+    - Can be required, optional, or set by default
+    - Do not need to be assigned by argument name, if specified in order (recipe)
+    
+. . .
+
+-   For example, lets consider the `split` function:
+
+```{r}
+#| echo: true
+#| eval: true
+args(split)     # Display argument names
+```
+
+## Topic 6: Functions in R {data-menu-title="User-defined functions"}
+-   There are two basic types of functions in R:
+
+    1. User-defined functions
+    
+. . .
+
+```{r}
+#| echo: true
+#| eval: true
+ages     <- c(99,46,23,54,23)
+
+age_mean <- function(x) {
+    summation <- sum(x)
+    summation / length(x)
+}
+
+age_mean(ages)
+```
+
+## Topic 6: Functions in R {data-menu-title="Packages"}
+-   There are two basic types of functions in R:
+
+    1. User-defined functions
+    2. Built-in functions that are loaded via [Packages]{style="color:#edea2b"} (Community development!)
+
+![](images/r_packages.png){.absolute bottom="0" right="0" height="50%"}
+
+## Topic 6: Functions in R {data-menu-title="Community development"}
+-   Packages in R:
+
+    - R packages are used to install built-in functions into the R Environment.
+    - In addition to functions, packages also include data sets, help documentation, and how-to examples (i.e., vignette).
+
+![](images/r_packages.png){.absolute bottom="0" right="0" height="50%"}
+
+. . .
+
+-   When you install R for the first time, you are installing `base R`, which includes functions written by the original authors of the R language.
+
+. . .
+
+-   Additional packages are developed by the [R community](https://cran.case.edu/).
+
+. . .
+
+-   How do we get packages loaded into R?
+
+## Topic 6: Functions in R {data-menu-title="Loading packages"}
+-   How do we get packages loaded into R?
+
+-   Two step process:
+
+    1. [Install]{style="color:#edea2b"} the package - do this once with `install.packages` function
+    2. [Load]{style="color:#edea2b"} the package into R - do this every time with `library` function
+
+. . .
+
+::: panel-tabset
+### Programmatically
+```{r}
+#| echo: true
+#| eval: false
+# Traditional methods
+install.packages("ggplot2")      # Install - quotes are necessary
+install.packages("dplyr")
+library(ggplot2)                 # Load into R environment - quotes are optional
+library(dplyr)
+
+# More efficient way
+install.packages("pacman")       # Install pacman package
+library(pacman)                  # Load into R environment
+p_load(ggplot2, dplyr)           # Use p_load function to install and load multiple packages
+```
+### RStudio IDE
+![](images/explorer1.png){.absolute bottom="0" left="0" height="50%"}
+:::
+
+## Topic 6: Functions in R {data-menu-title="Tidyverse"}
+-   [Tidyverse]{style="color:#edea2b"} - collection of R packages for data science
+![](images/tidyverse.png){.absolute bottom="-10" right="275" height="50%"} ![](images/tidyverse2.png){.absolute bottom="0" right="0" height="50%"}
+
+. . .
+
+-   Underlying design philosophy, grammar, and data structures
+
+. . .
+
+-   [Supported by RStudio](https://www.tidyverse.org)
+
+## Topic 6: Functions in R {data-menu-title="Data process"}
+
+::: {.r-stack}
+![](images/tidy1.png)
+
+![](images/tidy2.png){.fragment}
+
+![](images/tidy3.png){.fragment}
+:::
+
+## Topic 6: Functions in R {data-menu-title="Tidyverse install"}
+-   Tidyverse packages can be installed and loaded individually:
+
+```{r}
+#| echo: true
+#| eval: false
+# Install and load individual Tidyverse packages
+install.packages("dplyr"); library(dplyr)         # Install and load dplyr
+install.packages("ggplot2"); library (ggplot2)    # Install and load ggplot
+install.packages("readr"); library(readr)         # Install and load readr
+```
+
+![](images/tidyverse2.png){.absolute bottom="0" right="0" height="50%"}
+
+::: fragment
+-   Or, in bulk, with the `tidyverse` package:
+
+```{r}
+#| echo: true
+#| eval: false
+# Install all Tidyverse packages
+install.packages("tidyverse"); library(tidyverse)  #Bulk tidyverse
+
+# List tidyverse packages
+tidyverse_packages(include_self=FALSE)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+library(tidyverse)
+tidyverse_packages(include_self=FALSE)
+```
+:::
+
+![](images/tidyverse2.png){.absolute bottom="0" right="0" height="50%"}
+
+## Review - Objects and Functions: {data-background="#000000" data-menu-title="Review 3 - Objects"}
+
+::: fragment
+-   Define objects > Apply functions > Repeat!
+:::
+
+::: fragment
+-   Objects have a [type]{style="color:#edea2b"} and [structure]{style="color:#edea2b"}.
+:::
+
+::: fragment
+::: columns
+::: column
+-   There are six basic types of data:
+
+    1. Logical
+    2. Double - default data type in R
+    3. Integer
+    4. Complex
+    5. Character
+    6. Factors - Integer with Character labels
+:::
+::: column
+-   There are four basic structures:
+
+    1. Scalar
+    2. Vector
+    3. Matrix
+    4. Data frame (and Tibble)
+:::
+:::
+:::
+
+## Review - Objects and Functions: {data-background="#000000" data-menu-title="Review 3 - Functions"}
+
+-   Define objects > Apply functions > Repeat!
+![](images/tidyverse_hex.png){.absolute bottom="0" right="0" height="40%"}
+
+::: fragment
+-   Functions are used to work with objects in R.
+
+    -   Functions (recipe) + Arguments (ingredients) = Result (meal)
+:::
+
+::: fragment
+-   Functions can be user-defined, or loaded via [Packages]{style="color:#edea2b"}.
+:::
+
+::: fragment
+-   Getting packages into R is a two step process:
+
+    1. [Install]{style="color:#edea2b"} the package - do this once with `install.packages` function
+    2. [Load]{style="color:#edea2b"} the package into R - do this every time with `library` function
+:::
+
+::: fragment
+-   Tidyverse - collection of R packages for data science, supported by RStudio.
+
+    -   Loaded in bulk with `tidyverse` function
+:::
+
+## Exercise - Getting started with R {data-menu-title="Exercise1"}
+
+-   First, try the following:
+
+    1. Set your working directory to the Desktop.
+    2. Download the file [penguins.csv]{style="color:#edea2b"} using the following command:
+    ```{r}
+#| echo: true
+#| eval: false
+download.file('https://www.dropbox.com/s/ghralb2cmkp562w/penguins.csv?dl=1')
+    ```
+
+::: fragment
+-   Next, try these additional steps:
+
+    1. Install and load the Tidyverse package `readr`.
+    2. Using the `read_csv` function, read in penguins.csv.
+    3. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
+    4. Use this object to find the heaviest weight.
+:::
+
+::: fragment
+-   Finally, try the following:
+
+    1. Create a folder on the Desktop called Data.
+    2. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
+    3. Write it to a .csv file within your new Data folder.
+:::
+
+:::{.absolute top="100" right="0"}    
+```{r}
+countdown::countdown(5L)
+```
 :::
