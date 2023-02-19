@@ -34,9 +34,10 @@ preview-links: auto
 
     1.  R and RStudio and how they work together
     2.  Different data types and structures
-    3.  Objects and functions
-    4.  Loading data into the R Environment
-    5.  Exporting data from the R Environment
+    3.  Objects and functions and how they work together
+    4.  Working directories
+    5.  Loading data into the R Environment
+    6.  Exporting data from the R Environment
 :::
 
 ::: fragment
@@ -97,15 +98,13 @@ The presentation is split into seven topics:
 
 # Topic 1 {data-menu-title="Topic 1"}
 
-[**What**]{style="color:#edea2b"} is R (and RStudio)?
+[[**What**]{style="color:#edea2b"} is R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
 
 ## [**What**]{style="color:#edea2b"} is R? {data-menu-title="What is R"}
 
 ::: columns
 ::: {.column width="65%"}
-::: fragment
 -   R is a **programming language** ([one of many](https://www.tiobe.com/tiobe-index/)) and an **environment** for statistical computing.
-:::
 
 ::: fragment
 -   Developed by Ross Ihaka and Robert Gentleman 29 years ago; now maintained by a core team supported by the [R Foundation](https://www.r-project.org/foundation/).
@@ -138,9 +137,7 @@ The presentation is split into seven topics:
 
 ::: columns
 ::: {.column width="65%"}
-::: fragment
 -   RStudio is an **Integrated Development Environment** (IDE), or a front end platform to run R.
-:::
 
 ::: fragment
 -   Developed by [Posit](https://posit.co/), a company that develops free and open tools for R, and enterprise-ready professional products.
@@ -171,15 +168,13 @@ The presentation is split into seven topics:
 
 # Topic 2 {data-menu-title="Topic 2"}
 
-[**Why**]{style="color:#edea2b"} use R (and RStudio)?
+[[**Why**]{style="color:#edea2b"} use R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
 
 ## [**Why**]{style="color:#edea2b"} use R? {data-menu-title="Why use R"}
 
 ::: columns
 ::: {.column width="65%"}
-::: fragment
 -   Open source and **free**!
-:::
 
 ::: fragment
 -   Available on most platforms/OS
@@ -221,9 +216,7 @@ The presentation is split into seven topics:
 
 ::: columns
 ::: {.column width="65%"}
-::: fragment
 -   Like R, it's open source and **free**!
-:::
 
 ::: fragment
 -   It can reduce the learning curve of R, by creating **organization**.
@@ -284,7 +277,7 @@ Consider a car analogy.
 
 # Topic 3 {data-menu-title="Topic 3"}
 
-[**How**]{style="color:#edea2b"} do I get R (and RStudio)?
+[[**How**]{style="color:#edea2b"} do I get R (and RStudio)?]{style="font-size: 1.5em; text-align: center"}
 
 ## Topic 3: [**How**]{style="color:#edea2b"} do I get R (and RStudio)? {data-menu-title="How do I get R (and RStudio)"}
 
@@ -805,21 +798,24 @@ avg.n
 ## Topic 6: Functions in R {data-menu-title="Recipes"}
 -   [Functions]{style="color:#edea2b"} are procedures that typically take one or more objects as [arguments]{style="color:#edea2b"} (i.e., inputs), does something with them, then returns a new object (i.e., result).
 
-. . .
+![](images/recipe.png){.absolute bottom="0" right="0" height="40%"}
 
+::: fragment
 -   Cooking analogy:
       
     - Functions (recipe) + Arguments (ingredients) = Result (meal)
-    
-. . .
+:::    
 
+::: fragment
 -   Arguments (ingredients):
 
     - Can be required, optional, or set by default
     - Do not need to be assigned by argument name, if specified in order (recipe)
-    
-. . .
+:::    
 
+::: fragment
+::: columns
+::: column
 -   For example, lets consider the `split` function:
 
 ```{r}
@@ -827,14 +823,18 @@ avg.n
 #| eval: true
 args(split)     # Display argument names
 ```
+:::
+:::
+
+![](images/recipe.png){.absolute bottom="0" right="0" height="40%"}
+:::
 
 ## Topic 6: Functions in R {data-menu-title="User-defined functions"}
 -   There are two basic types of functions in R:
 
     1. User-defined functions
-    
-. . .
 
+::: fragment
 ```{r}
 #| echo: true
 #| eval: true
@@ -847,6 +847,7 @@ age_mean <- function(x) {
 
 age_mean(ages)
 ```
+:::
 
 ## Topic 6: Functions in R {data-menu-title="Packages"}
 -   There are two basic types of functions in R:
@@ -864,17 +865,17 @@ age_mean(ages)
 
 ![](images/r_packages.png){.absolute bottom="0" right="0" height="50%"}
 
-. . .
-
+::: fragment
 -   When you install R for the first time, you are installing `base R`, which includes functions written by the original authors of the R language.
+:::
 
-. . .
-
+::: fragment
 -   Additional packages are developed by the [R community](https://cran.case.edu/).
+:::
 
-. . .
-
+::: fragment
 -   How do we get packages loaded into R?
+:::
 
 ## Topic 6: Functions in R {data-menu-title="Loading packages"}
 -   How do we get packages loaded into R?
@@ -884,8 +885,7 @@ age_mean(ages)
     1. [Install]{style="color:#edea2b"} the package - do this once with `install.packages` function
     2. [Load]{style="color:#edea2b"} the package into R - do this every time with `library` function
 
-. . .
-
+::: fragment
 ::: panel-tabset
 ### Programmatically
 ```{r}
@@ -904,6 +904,7 @@ p_load(ggplot2, dplyr)           # Use p_load function to install and load multi
 ```
 ### RStudio IDE
 ![](images/explorer1.png){.absolute bottom="0" left="0" height="50%"}
+:::
 :::
 
 ## Topic 6: Functions in R {data-menu-title="Tidyverse"}
@@ -1035,7 +1036,7 @@ tidyverse_packages(include_self=FALSE)
     ```{r}
 #| echo: true
 #| eval: false
-download.file('https://www.dropbox.com/s/ghralb2cmkp562w/penguins.csv?dl=1')
+download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
     ```
 
 ::: fragment
@@ -1059,4 +1060,102 @@ download.file('https://www.dropbox.com/s/ghralb2cmkp562w/penguins.csv?dl=1')
 ```{r}
 countdown::countdown(5L)
 ```
+:::
+
+## Exercise - Getting started with R {data-menu-title="Answer"}
+-   How did you do?
+
+::: {.absolute top="100" left="0" width="100%"}
+::: fragment
+```{r}
+#| echo: true
+#| eval: false
+# Set working directory to Desktop and download file
+setwd('C:/Users/jsm4/Desktop')
+download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+```
+:::
+:::
+
+::: {.absolute top="100" left="0" width="100%"}
+::: fragment
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "5-11"
+# Set working directory to Desktop and download file
+setwd('C:/Users/jsm4/Desktop')
+download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+
+# Install and load readr package
+install.packages('readr')
+library(readr)
+
+# Load penguins data set
+df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
+df <- read_csv('penguins.csv')                        # Relative path
+```
+:::
+:::
+
+::: {.absolute top="100" left="0" width="100%"}
+::: fragment
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "13-17"
+# Set working directory to Desktop and download file
+setwd('C:/Users/jsm4/Desktop')
+download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+
+# Install and load readr package
+install.packages('readr')
+library(readr)
+
+# Load penguins data set
+df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
+df <- read_csv('penguins.csv')                        # Relative path
+
+# Assign weight object
+penguin_weights <- df$body_mass_g
+
+# Get maximum weight
+max(penguin_weights, na.rm=TRUE)
+```
+:::
+:::
+
+::: {.absolute top="100" left="0" width="100%"}
+::: fragment
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "19-24"
+# Set working directory to Desktop and download file
+setwd('C:/Users/jsm4/Desktop')
+download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+
+# Install and load readr package
+install.packages('readr')
+library(readr)
+
+# Load penguins data set
+df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
+df <- read_csv('penguins.csv')                        # Relative path
+
+# Assign weight object
+penguin_weights <- df$body_mass_g
+
+# Get maximum weight
+max(penguin_weights, na.rm=TRUE)
+
+# Create data directory
+dir.create('Data')
+
+# Select 100 rows and write to .csv file
+df_subset <- head(df,100)
+write.csv(df_subset,'Data/penguins_subset.csv')
+
+```
+:::
 :::

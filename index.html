@@ -405,7 +405,8 @@
 <ol type="1">
 <li>R and RStudio and how they work together</li>
 <li>Different data types and structures</li>
-<li>Objects and functions</li>
+<li>Objects and functions and how they work together</li>
+<li>Working directories</li>
 <li>Loading data into the R Environment</li>
 <li>Exporting data from the R Environment</li>
 </ol></li>
@@ -466,17 +467,15 @@
 <section>
 <section id="topic-1" class="title-slide slide level1 center" data-menu-title="Topic 1">
 <h1>Topic 1</h1>
-<p><span style="color:#edea2b"><strong>What</strong></span> is R (and RStudio)?</p>
+<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>What</strong></span> is R (and RStudio)?</span></p>
 </section>
 <section id="what-is-r" class="slide level2" data-menu-title="What is R">
 <h2><span style="color:#edea2b"><strong>What</strong></span> is R?</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div class="fragment">
 <ul>
 <li>R is a <strong>programming language</strong> (<a href="https://www.tiobe.com/tiobe-index/">one of many</a>) and an <strong>environment</strong> for statistical computing.</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>Developed by Ross Ihaka and Robert Gentleman 29 years ago; now maintained by a core team supported by the <a href="https://www.r-project.org/foundation/">R Foundation</a>.</li>
@@ -506,11 +505,9 @@
 <h2><span style="color:#edea2b"><strong>What</strong></span> is RStudio?</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div class="fragment">
 <ul>
 <li>RStudio is an <strong>Integrated Development Environment</strong> (IDE), or a front end platform to run R.</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>Developed by <a href="https://posit.co/">Posit</a>, a company that develops free and open tools for R, and enterprise-ready professional products.</li>
@@ -540,17 +537,15 @@
 <section>
 <section id="topic-2" class="title-slide slide level1 center" data-menu-title="Topic 2">
 <h1>Topic 2</h1>
-<p><span style="color:#edea2b"><strong>Why</strong></span> use R (and RStudio)?</p>
+<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>Why</strong></span> use R (and RStudio)?</span></p>
 </section>
 <section id="why-use-r" class="slide level2" data-menu-title="Why use R">
 <h2><span style="color:#edea2b"><strong>Why</strong></span> use R?</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div class="fragment">
 <ul>
 <li>Open source and <strong>free</strong>!</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>Available on most platforms/OS</li>
@@ -586,11 +581,9 @@
 <h2><span style="color:#edea2b"><strong>Why</strong></span> use RStudio?</h2>
 <div class="columns">
 <div class="column" style="width:65%;">
-<div class="fragment">
 <ul>
 <li>Like R, it’s open source and <strong>free</strong>!</li>
 </ul>
-</div>
 <div class="fragment">
 <ul>
 <li>It can reduce the learning curve of R, by creating <strong>organization</strong>.</li>
@@ -644,7 +637,7 @@
 <section>
 <section id="topic-3" class="title-slide slide level1 center" data-menu-title="Topic 3">
 <h1>Topic 3</h1>
-<p><span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</p>
+<p><span style="font-size: 1.5em; text-align: center"><span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</span></p>
 </section>
 <section id="topic-3-how-do-i-get-r-and-rstudio" class="slide level2" data-menu-title="How do I get R (and RStudio)">
 <h2>Topic 3: <span style="color:#edea2b"><strong>How</strong></span> do I get R (and RStudio)?</h2>
@@ -1233,6 +1226,7 @@ Levels: A B C D</code></pre>
 <ul>
 <li><span style="color:#edea2b">Functions</span> are procedures that typically take one or more objects as <span style="color:#edea2b">arguments</span> (i.e., inputs), does something with them, then returns a new object (i.e., result).</li>
 </ul>
+<p><img data-src="images/recipe.png" class="absolute" style="bottom: 0px; right: 0px; height: 40%; "></p>
 <div class="fragment">
 <ul>
 <li><p>Cooking analogy:</p>
@@ -1251,6 +1245,8 @@ Levels: A B C D</code></pre>
 </ul>
 </div>
 <div class="fragment">
+<div class="columns">
+<div class="column">
 <ul>
 <li>For example, lets consider the <code>split</code> function:</li>
 </ul>
@@ -1261,6 +1257,9 @@ Levels: A B C D</code></pre>
 NULL</code></pre>
 </div>
 </div>
+</div>
+</div>
+<p><img data-src="images/recipe.png" class="absolute" style="bottom: 0px; right: 0px; height: 40%; "></p>
 </div>
 </section>
 <section id="topic-6-functions-in-r-2" class="slide level2" data-menu-title="User-defined functions">
@@ -1506,7 +1505,7 @@ NULL</code></pre>
 <li>Download the file <span style="color:#edea2b">penguins.csv</span> using the following command:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/ghralb2cmkp562w/penguins.csv?dl=1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
 <div class="fragment">
@@ -1533,10 +1532,95 @@ NULL</code></pre>
 <div class="absolute" style="top: 100px; right: 0px; ">
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4e6f2c03" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_8c6edfb4" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise---getting-started-with-r-1" class="slide level2" data-menu-title="Answer">
+<h2>Exercise - Getting started with R</h2>
+<ul>
+<li>How did you do?</li>
+</ul>
+<div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb74-2"><a href="#cb74-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb74-3"><a href="#cb74-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75" data-code-line-numbers="5-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb75-2"><a href="#cb75-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb75-3"><a href="#cb75-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb75-4"><a href="#cb75-4"></a></span>
+<span id="cb75-5"><a href="#cb75-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb75-6"><a href="#cb75-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb75-7"><a href="#cb75-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb75-8"><a href="#cb75-8"></a></span>
+<span id="cb75-9"><a href="#cb75-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb75-10"><a href="#cb75-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb75-11"><a href="#cb75-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76" data-code-line-numbers="13-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb76-2"><a href="#cb76-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb76-3"><a href="#cb76-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb76-4"><a href="#cb76-4"></a></span>
+<span id="cb76-5"><a href="#cb76-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb76-6"><a href="#cb76-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb76-7"><a href="#cb76-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb76-8"><a href="#cb76-8"></a></span>
+<span id="cb76-9"><a href="#cb76-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb76-10"><a href="#cb76-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb76-11"><a href="#cb76-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
+<span id="cb76-12"><a href="#cb76-12"></a></span>
+<span id="cb76-13"><a href="#cb76-13"></a><span class="co"># Assign weight object</span></span>
+<span id="cb76-14"><a href="#cb76-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
+<span id="cb76-15"><a href="#cb76-15"></a></span>
+<span id="cb76-16"><a href="#cb76-16"></a><span class="co"># Get maximum weight</span></span>
+<span id="cb76-17"><a href="#cb76-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77" data-code-line-numbers="19-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb77-2"><a href="#cb77-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb77-3"><a href="#cb77-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb77-4"><a href="#cb77-4"></a></span>
+<span id="cb77-5"><a href="#cb77-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb77-6"><a href="#cb77-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb77-7"><a href="#cb77-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb77-8"><a href="#cb77-8"></a></span>
+<span id="cb77-9"><a href="#cb77-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb77-10"><a href="#cb77-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb77-11"><a href="#cb77-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
+<span id="cb77-12"><a href="#cb77-12"></a></span>
+<span id="cb77-13"><a href="#cb77-13"></a><span class="co"># Assign weight object</span></span>
+<span id="cb77-14"><a href="#cb77-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
+<span id="cb77-15"><a href="#cb77-15"></a></span>
+<span id="cb77-16"><a href="#cb77-16"></a><span class="co"># Get maximum weight</span></span>
+<span id="cb77-17"><a href="#cb77-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb77-18"><a href="#cb77-18"></a></span>
+<span id="cb77-19"><a href="#cb77-19"></a><span class="co"># Create data directory</span></span>
+<span id="cb77-20"><a href="#cb77-20"></a><span class="fu">dir.create</span>(<span class="st">'Data'</span>)</span>
+<span id="cb77-21"><a href="#cb77-21"></a></span>
+<span id="cb77-22"><a href="#cb77-22"></a><span class="co"># Select 100 rows and write to .csv file</span></span>
+<span id="cb77-23"><a href="#cb77-23"></a>df_subset <span class="ot">&lt;-</span> <span class="fu">head</span>(df,<span class="dv">100</span>)</span>
+<span id="cb77-24"><a href="#cb77-24"></a><span class="fu">write.csv</span>(df_subset,<span class="st">'Data/penguins_subset.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
