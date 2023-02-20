@@ -90,8 +90,10 @@ The presentation is split into seven topics:
 -   Topic 6:    Functions (and Packages) in R
 :::
 
-::: incremental
--   Topic 7:    Additional Resources
+::: fragment
+-   Topic 7:    Extras
+
+    -   RStudio Projects and Additional Resources
 :::
 
 ![](images/r_learners.png){.absolute bottom="0" right="0" width="50%" height="50%"}
@@ -1159,3 +1161,9 @@ write.csv(df_subset,'Data/penguins_subset.csv')
 ```
 :::
 :::
+
+# Topic 7 {data-menu-title="Topic 7"}
+
+[Extras - RStudio Projects and Additional Resources]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 7: Extras - RStudio Projects and Additional Resources {data-menu-title="Extras"}
