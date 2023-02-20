@@ -32,12 +32,13 @@ preview-links: auto
 ::: fragment
 -   By the end of this presentation, you should know about...
 
-    1.  R and RStudio and how they work together
-    2.  Different data types and structures
-    3.  Objects and functions and how they work together
-    4.  Working directories
-    5.  Loading data into the R Environment
-    6.  Exporting data from the R Environment
+    1.  R and RStudio
+    2.  Objects and functions
+        - Different data types and structures
+    3.  R Environment
+        - Set a working directory
+        - Assign objects & apply functions
+        - Reading data in & writing data out
 :::
 
 ::: fragment
