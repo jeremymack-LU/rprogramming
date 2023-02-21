@@ -42,7 +42,7 @@ preview-links: auto
 :::
 
 ::: fragment
--   Raw code available on [Github](https://github.com/jeremymack-LU/shinyapps)
+-   Raw code available on [Github](https://github.com/jeremymack-LU/rprogramming/blob/main/index.qmd)
 :::
 :::
 
@@ -110,7 +110,7 @@ The presentation is split into seven topics:
 -   R is a **programming language** ([one of many](https://www.tiobe.com/tiobe-index/)) and an **environment** for statistical computing.
 
 ::: fragment
--   Developed by Ross Ihaka and Robert Gentleman 29 years ago; now maintained by a core team supported by the [R Foundation](https://www.r-project.org/foundation/).
+-   Developed by Ross Ihaka and Robert Gentleman 30 years ago; now maintained by a core team supported by the [R Foundation](https://www.r-project.org/foundation/).
 :::
 
 ::: fragment
@@ -228,7 +228,7 @@ The presentation is split into seven topics:
 ::: fragment
 -   Integrates nicely with other features and applications that can be used with R, especially those that increase reproducibility:
 
-    -   R Projects
+    -   RStudio Projects
     -   Version control and tracking
     -   R Markdown
     -   ShinyApps
@@ -828,8 +828,6 @@ args(split)     # Display argument names
 ```
 :::
 :::
-
-![](images/recipe.png){.absolute bottom="0" right="0" height="40%"}
 :::
 
 ## Topic 6: Functions in R {data-menu-title="User-defined functions"}
@@ -1056,7 +1054,7 @@ download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'pe
 
     1. Create a folder on the Desktop called Data.
     2. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
-    3. Write it to a .csv file within your new Data folder.
+    3. Write it to a .csv file within your new Data folder, using the `write.csv` function.
 :::
 
 :::{.absolute top="100" right="0"}    
@@ -1167,4 +1165,6 @@ write.csv(df_subset,'Data/penguins_subset.csv')
 
 [Extras - RStudio Projects and Additional Resources]{style="font-size: 1.5em; text-align: center"}
 
-## Topic 7: Extras - RStudio Projects and Additional Resources {data-menu-title="Extras"}
+## Topic 7: Extras - RStudio Projects {data-menu-title="RStudio Projects"}
+
+## Topic 7: Extras - Additional Resources {data-menu-title="Additional Resources"}
