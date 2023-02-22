@@ -588,23 +588,17 @@ str(x)                        # Print the structure of x
 ::: {.column width="49%"}
 -   **Scalar objects:**
 
-::: {.fragment .fade-in-then-out fragment-index=2}
+    1. Hold only one value at a time
+    2. Can be used to build more complex objects
 
-  1. Hold only one value at a time
-  2. Can be used to build more complex objects
-    
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in fragment-index=3}
+::: fragment  
 ```{r}
 #| echo: true
 #| eval: true
 x <- 10.5 
-x
 str(x)
 ```
-:::
-:::
+:::    
 :::
 :::
 ### Vector
@@ -617,33 +611,18 @@ str(x)
 ::: {.column width="49%"}
 -   **Vector objects:**
 
-::: {.fragment .fade-in-then-out fragment-index=3}
+    1. Hold several values stored as a single object
+    2. Either numeric or character (not both!)
 
-  1. Hold several values stored as a single object
-  2. Either numeric or character (not both!)
-    
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in-then-out fragment-index=4}
+::: fragment  
 ```{r}
 #| echo: true
 #| eval: true
-n <- c(2,3,5,8,13,21,34,55) 
-n
-str(n)
+n1 <- c(2,3,5,8,13,21,34,55)
+n2 <- c(2,3,5,8,13,21,34,"55")
+str(n1)
+str(n2)
 ```
-:::
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in fragment-index=5}
-```{r}
-#| echo: true
-#| eval: true
-n <- c(2,3,5,8,13,21,34,"55") 
-n
-str(n)
-```
-:::
 :::
 :::
 :::
@@ -656,45 +635,23 @@ str(n)
 :::
 ::: {.column width="49%"}
 -   **Matrix objects:**
+  
+    1. Large data structure
+    2. Has 2-dimensions, representing its height (rows) and width (columns)
+    3. Either numeric or character (not both!)
 
-::: {.fragment .fade-in-then-out fragment-index=5}
-
-  1. Large data structure
-  2. Has 2-dimensions, representing its height (rows) and width (columns)
-  3. Either numeric or character (not both!)
-    
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in-then-out fragment-index=6}
+::: fragment
 ```{r}
 #| echo: true
 #| eval: true
-x <- 1:5
-y <- 6:10
-z <- 11:15
+x <- 1:5; y <- 6:10; z <- 11:15
 m <- cbind(x,y,z)
-class(m)
-str(m)
-```
-:::
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in fragment-index=7}
-```{r}
-#| echo: true
-#| eval: true
-x <- 1:5
-y <- 6:10
-z <- c(11,12,13,'14',15)
-m <- cbind(x,y,z)
-class(m)
 str(m)
 ```
 :::
 :::
 :::
-:::
-### Data frame (and Tibble)
+### Data frame
 ::: columns
 ::: {.column width="50%"}
 ![](images/objects4.png)
@@ -704,15 +661,11 @@ str(m)
 ::: {.column width="49%"}
 -   **Data frame objects:**
 
-::: {.fragment .fade-in-then-out fragment-index=7}
+    1. Large data structure
+    2. Has 2-dimensions, representing its height (rows) and width (columns)
+    3. Can be a mix of data types
 
-  1. Large data structure
-  2. Has 2-dimensions, representing its height (rows) and width (columns)
-  3. Can be a mix of data types
-    
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in fragment-index=8}
+::: fragment
 ```{r}
 #| echo: true
 #| eval: true
@@ -720,11 +673,9 @@ survey <- data.frame(
 "survey id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
-class(survey)
 str(survey)
 ```
-:::
-:::
+:::  
 :::
 :::
 ### Tibble
@@ -735,19 +686,13 @@ str(survey)
 ::: {.column width="1%"}
 :::
 ::: {.column width="49%"}
--   **Tibble objects:**
+-   **Data frame objects:**
 
-::: {.fragment .fade-in-then-out fragment-index=8}
-
-  1. Large data structure
-  2. Has 2-dimensions, representing its height (rows) and width (columns)
-  3. Can be a mix of data types
-  4. "Lazy data frames"
-        - Do less and complain more.
+    1. Large data structure
+    2. Has 2-dimensions, representing its height (rows) and width (columns)
+    3. Can be a mix of data types
     
-:::
-::: {.absolute top="125" left="560"}
-::: {.fragment .fade-in fragment-index=9}
+::: fragment
 ```{r}
 #| echo: true
 #| eval: true
@@ -756,11 +701,9 @@ survey <- tibble(
 "survey id"  = c(1,2,3,4,5),
 "sex" = c("m","m","m","f","f"),
 "age" = c(99,46,23,54,23))
-class(survey)
 str(survey)
 ```
-:::
-:::
+::: 
 :::
 :::
 :::

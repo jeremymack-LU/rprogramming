@@ -957,7 +957,7 @@ Levels: A B C D</code></pre>
 <div class="fragment fade-in" data-fragment-index="2">
 <div class="absolute" style="top: 180px; left: 0px; width: 100%; ">
 <div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Scalar</a></li><li><a href="#tabset-2-2">Vector</a></li><li><a href="#tabset-2-3">Matrix</a></li><li><a href="#tabset-2-4">Data frame (and Tibble)</a></li><li><a href="#tabset-2-5">Tibble</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Scalar</a></li><li><a href="#tabset-2-2">Vector</a></li><li><a href="#tabset-2-3">Matrix</a></li><li><a href="#tabset-2-4">Data frame</a></li><li><a href="#tabset-2-5">Tibble</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
 <div class="columns">
@@ -967,26 +967,18 @@ Levels: A B C D</code></pre>
 
 </div><div class="column" style="width:49%;">
 <ul>
-<li><strong>Scalar objects:</strong></li>
-</ul>
-<div class="fragment fade-in-then-out" data-fragment-index="2">
+<li><p><strong>Scalar objects:</strong></p>
 <ol type="1">
 <li>Hold only one value at a time</li>
 <li>Can be used to build more complex objects</li>
-</ol>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in" data-fragment-index="3">
+</ol></li>
+</ul>
+<div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>x <span class="ot">&lt;-</span> <span class="fl">10.5</span> </span>
-<span id="cb34-2"><a href="#cb34-2"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">str</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">str</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> num 10.5</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1001,41 +993,23 @@ Levels: A B C D</code></pre>
 
 </div><div class="column" style="width:49%;">
 <ul>
-<li><strong>Vector objects:</strong></li>
-</ul>
-<div class="fragment fade-in-then-out" data-fragment-index="3">
+<li><p><strong>Vector objects:</strong></p>
 <ol type="1">
 <li>Hold several values stored as a single object</li>
 <li>Either numeric or character (not both!)</li>
-</ol>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in-then-out" data-fragment-index="4">
+</ol></li>
+</ul>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="dv">55</span>) </span>
-<span id="cb38-2"><a href="#cb38-2"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  2  3  5  8 13 21 34 55</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">str</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>n1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="dv">55</span>)</span>
+<span id="cb36-2"><a href="#cb36-2"></a>n2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="st">"55"</span>)</span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="fu">str</span>(n1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> num [1:8] 2 3 5 8 13 21 34 55</code></pre>
 </div>
-</div>
-</div>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in" data-fragment-index="5">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">34</span>,<span class="st">"55"</span>) </span>
-<span id="cb42-2"><a href="#cb42-2"></a>n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "2"  "3"  "5"  "8"  "13" "21" "34" "55"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">str</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">str</span>(n2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> chr [1:8] "2" "3" "5" "8" "13" "21" "34" "55"</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1050,54 +1024,23 @@ Levels: A B C D</code></pre>
 
 </div><div class="column" style="width:49%;">
 <ul>
-<li><strong>Matrix objects:</strong></li>
-</ul>
-<div class="fragment fade-in-then-out" data-fragment-index="5">
+<li><p><strong>Matrix objects:</strong></p>
 <ol type="1">
 <li>Large data structure</li>
 <li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
 <li>Either numeric or character (not both!)</li>
-</ol>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in-then-out" data-fragment-index="6">
+</ol></li>
+</ul>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb46-2"><a href="#cb46-2"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb46-3"><a href="#cb46-3"></a>z <span class="ot">&lt;-</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span></span>
-<span id="cb46-4"><a href="#cb46-4"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y,z)</span>
-<span id="cb46-5"><a href="#cb46-5"></a><span class="fu">class</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "matrix" "array" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>; y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span>; z <span class="ot">&lt;-</span> <span class="dv">11</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y,z)</span>
+<span id="cb40-3"><a href="#cb40-3"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> int [1:5, 1:3] 1 2 3 4 5 6 7 8 9 10 ...
  - attr(*, "dimnames")=List of 2
   ..$ : NULL
   ..$ : chr [1:3] "x" "y" "z"</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in" data-fragment-index="7">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb50-2"><a href="#cb50-2"></a>y <span class="ot">&lt;-</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb50-3"><a href="#cb50-3"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="st">'14'</span>,<span class="dv">15</span>)</span>
-<span id="cb50-4"><a href="#cb50-4"></a>m <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y,z)</span>
-<span id="cb50-5"><a href="#cb50-5"></a><span class="fu">class</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "matrix" "array" </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> chr [1:5, 1:3] "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" ...
- - attr(*, "dimnames")=List of 2
-  ..$ : NULL
-  ..$ : chr [1:3] "x" "y" "z"</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1112,33 +1055,25 @@ Levels: A B C D</code></pre>
 
 </div><div class="column" style="width:49%;">
 <ul>
-<li><strong>Data frame objects:</strong></li>
-</ul>
-<div class="fragment fade-in-then-out" data-fragment-index="7">
+<li><p><strong>Data frame objects:</strong></p>
 <ol type="1">
 <li>Large data structure</li>
 <li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
 <li>Can be a mix of data types</li>
-</ol>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in" data-fragment-index="8">
+</ol></li>
+</ul>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb54-2"><a href="#cb54-2"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
-<span id="cb54-3"><a href="#cb54-3"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
-<span id="cb54-4"><a href="#cb54-4"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
-<span id="cb54-5"><a href="#cb54-5"></a><span class="fu">class</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "data.frame"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>survey <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb42-3"><a href="#cb42-3"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
+<span id="cb42-4"><a href="#cb42-4"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
+<span id="cb42-5"><a href="#cb42-5"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   5 obs. of  3 variables:
  $ survey.id: num  1 2 3 4 5
  $ sex      : chr  "m" "m" "m" "f" ...
  $ age      : num  99 46 23 54 23</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1153,38 +1088,26 @@ Levels: A B C D</code></pre>
 
 </div><div class="column" style="width:49%;">
 <ul>
-<li><strong>Tibble objects:</strong></li>
-</ul>
-<div class="fragment fade-in-then-out" data-fragment-index="8">
+<li><p><strong>Data frame objects:</strong></p>
 <ol type="1">
 <li>Large data structure</li>
 <li>Has 2-dimensions, representing its height (rows) and width (columns)</li>
 <li>Can be a mix of data types</li>
-<li>“Lazy data frames”
-<ul>
-<li>Do less and complain more.</li>
-</ul></li>
-</ol>
-</div>
-<div class="absolute" style="top: 125px; left: 560px; ">
-<div class="fragment fade-in" data-fragment-index="9">
+</ol></li>
+</ul>
+<div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb58-2"><a href="#cb58-2"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb58-3"><a href="#cb58-3"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
-<span id="cb58-4"><a href="#cb58-4"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
-<span id="cb58-5"><a href="#cb58-5"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
-<span id="cb58-6"><a href="#cb58-6"></a><span class="fu">class</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb44-2"><a href="#cb44-2"></a>survey <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="st">"survey id"</span>  <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>),</span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="st">"sex"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"m"</span>,<span class="st">"f"</span>,<span class="st">"f"</span>),</span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="st">"age"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>))</span>
+<span id="cb44-6"><a href="#cb44-6"></a><span class="fu">str</span>(survey)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [5 × 3] (S3: tbl_df/tbl/data.frame)
  $ survey id: num [1:5] 1 2 3 4 5
  $ sex      : chr [1:5] "m" "m" "m" "f" ...
  $ age      : num [1:5] 99 46 23 54 23</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -1215,14 +1138,14 @@ Levels: A B C D</code></pre>
 <li>For example, we defined an object called “n”:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">21</span>, <span class="dv">34</span>, <span class="dv">55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">8</span>, <span class="dv">13</span>, <span class="dv">21</span>, <span class="dv">34</span>, <span class="dv">55</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We can then apply a function to our object. Lets say we’re interested in the average, so we’ll apply the <code>mean</code> function:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a>avg.n <span class="ot">&lt;-</span> <span class="fu">mean</span>(n)</span>
-<span id="cb63-2"><a href="#cb63-2"></a>avg.n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>avg.n <span class="ot">&lt;-</span> <span class="fu">mean</span>(n)</span>
+<span id="cb47-2"><a href="#cb47-2"></a>avg.n</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 17.625</code></pre>
 </div>
@@ -1259,7 +1182,7 @@ Levels: A B C D</code></pre>
 <li>For example, lets consider the <code>split</code> function:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">args</span>(split)     <span class="co"># Display argument names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">args</span>(split)     <span class="co"># Display argument names</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>function (x, f, drop = FALSE, ...) 
 NULL</code></pre>
@@ -1279,14 +1202,14 @@ NULL</code></pre>
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>ages     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>)</span>
-<span id="cb67-2"><a href="#cb67-2"></a></span>
-<span id="cb67-3"><a href="#cb67-3"></a>age_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb67-4"><a href="#cb67-4"></a>    summation <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
-<span id="cb67-5"><a href="#cb67-5"></a>    summation <span class="sc">/</span> <span class="fu">length</span>(x)</span>
-<span id="cb67-6"><a href="#cb67-6"></a>}</span>
-<span id="cb67-7"><a href="#cb67-7"></a></span>
-<span id="cb67-8"><a href="#cb67-8"></a><span class="fu">age_mean</span>(ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>ages     <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">99</span>,<span class="dv">46</span>,<span class="dv">23</span>,<span class="dv">54</span>,<span class="dv">23</span>)</span>
+<span id="cb51-2"><a href="#cb51-2"></a></span>
+<span id="cb51-3"><a href="#cb51-3"></a>age_mean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb51-4"><a href="#cb51-4"></a>    summation <span class="ot">&lt;-</span> <span class="fu">sum</span>(x)</span>
+<span id="cb51-5"><a href="#cb51-5"></a>    summation <span class="sc">/</span> <span class="fu">length</span>(x)</span>
+<span id="cb51-6"><a href="#cb51-6"></a>}</span>
+<span id="cb51-7"><a href="#cb51-7"></a></span>
+<span id="cb51-8"><a href="#cb51-8"></a><span class="fu">age_mean</span>(ages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 49</code></pre>
 </div>
@@ -1346,16 +1269,16 @@ NULL</code></pre>
 <div class="tab-content">
 <div id="tabset-3-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a><span class="co"># Traditional methods</span></span>
-<span id="cb69-2"><a href="#cb69-2"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># Install - quotes are necessary</span></span>
-<span id="cb69-3"><a href="#cb69-3"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
-<span id="cb69-4"><a href="#cb69-4"></a><span class="fu">library</span>(ggplot2)                 <span class="co"># Load into R environment - quotes are optional</span></span>
-<span id="cb69-5"><a href="#cb69-5"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb69-6"><a href="#cb69-6"></a></span>
-<span id="cb69-7"><a href="#cb69-7"></a><span class="co"># More efficient way</span></span>
-<span id="cb69-8"><a href="#cb69-8"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)       <span class="co"># Install pacman package</span></span>
-<span id="cb69-9"><a href="#cb69-9"></a><span class="fu">library</span>(pacman)                  <span class="co"># Load into R environment</span></span>
-<span id="cb69-10"><a href="#cb69-10"></a><span class="fu">p_load</span>(ggplot2, dplyr)           <span class="co"># Use p_load function to install and load multiple packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># Traditional methods</span></span>
+<span id="cb53-2"><a href="#cb53-2"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)      <span class="co"># Install - quotes are necessary</span></span>
+<span id="cb53-3"><a href="#cb53-3"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb53-4"><a href="#cb53-4"></a><span class="fu">library</span>(ggplot2)                 <span class="co"># Load into R environment - quotes are optional</span></span>
+<span id="cb53-5"><a href="#cb53-5"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb53-6"><a href="#cb53-6"></a></span>
+<span id="cb53-7"><a href="#cb53-7"></a><span class="co"># More efficient way</span></span>
+<span id="cb53-8"><a href="#cb53-8"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)       <span class="co"># Install pacman package</span></span>
+<span id="cb53-9"><a href="#cb53-9"></a><span class="fu">library</span>(pacman)                  <span class="co"># Load into R environment</span></span>
+<span id="cb53-10"><a href="#cb53-10"></a><span class="fu">p_load</span>(ggplot2, dplyr)           <span class="co"># Use p_load function to install and load multiple packages</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-3-2">
@@ -1395,10 +1318,10 @@ NULL</code></pre>
 <li>Tidyverse packages can be installed and loaded individually:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a><span class="co"># Install and load individual Tidyverse packages</span></span>
-<span id="cb70-2"><a href="#cb70-2"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>); <span class="fu">library</span>(dplyr)         <span class="co"># Install and load dplyr</span></span>
-<span id="cb70-3"><a href="#cb70-3"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>); <span class="fu">library</span> (ggplot2)    <span class="co"># Install and load ggplot</span></span>
-<span id="cb70-4"><a href="#cb70-4"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>); <span class="fu">library</span>(readr)         <span class="co"># Install and load readr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># Install and load individual Tidyverse packages</span></span>
+<span id="cb54-2"><a href="#cb54-2"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>); <span class="fu">library</span>(dplyr)         <span class="co"># Install and load dplyr</span></span>
+<span id="cb54-3"><a href="#cb54-3"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>); <span class="fu">library</span> (ggplot2)    <span class="co"># Install and load ggplot</span></span>
+<span id="cb54-4"><a href="#cb54-4"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>); <span class="fu">library</span>(readr)         <span class="co"># Install and load readr</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img data-src="images/tidyverse2.png" class="absolute" style="bottom: 0px; right: 0px; height: 50%; "></p>
 <div class="fragment">
@@ -1406,11 +1329,11 @@ NULL</code></pre>
 <li>Or, in bulk, with the <code>tidyverse</code> package:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a><span class="co"># Install all Tidyverse packages</span></span>
-<span id="cb71-2"><a href="#cb71-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>); <span class="fu">library</span>(tidyverse)  <span class="co">#Bulk tidyverse</span></span>
-<span id="cb71-3"><a href="#cb71-3"></a></span>
-<span id="cb71-4"><a href="#cb71-4"></a><span class="co"># List tidyverse packages</span></span>
-<span id="cb71-5"><a href="#cb71-5"></a><span class="fu">tidyverse_packages</span>(<span class="at">include_self=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># Install all Tidyverse packages</span></span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>); <span class="fu">library</span>(tidyverse)  <span class="co">#Bulk tidyverse</span></span>
+<span id="cb55-3"><a href="#cb55-3"></a></span>
+<span id="cb55-4"><a href="#cb55-4"></a><span class="co"># List tidyverse packages</span></span>
+<span id="cb55-5"><a href="#cb55-5"></a><span class="fu">tidyverse_packages</span>(<span class="at">include_self=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -1512,7 +1435,7 @@ NULL</code></pre>
 <li>Download the file <span style="color:#edea2b">penguins.csv</span> using the following command:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
 <div class="fragment">
@@ -1539,7 +1462,7 @@ NULL</code></pre>
 <div class="absolute" style="top: 100px; right: 0px; ">
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_cdd21ebd" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_6c55c522" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1555,79 +1478,79 @@ NULL</code></pre>
 <div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
-<span id="cb74-2"><a href="#cb74-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
-<span id="cb74-3"><a href="#cb74-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb58-2"><a href="#cb58-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb58-3"><a href="#cb58-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb75" data-code-line-numbers="5-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
-<span id="cb75-2"><a href="#cb75-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
-<span id="cb75-3"><a href="#cb75-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
-<span id="cb75-4"><a href="#cb75-4"></a></span>
-<span id="cb75-5"><a href="#cb75-5"></a><span class="co"># Install and load readr package</span></span>
-<span id="cb75-6"><a href="#cb75-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
-<span id="cb75-7"><a href="#cb75-7"></a><span class="fu">library</span>(readr)</span>
-<span id="cb75-8"><a href="#cb75-8"></a></span>
-<span id="cb75-9"><a href="#cb75-9"></a><span class="co"># Load penguins data set</span></span>
-<span id="cb75-10"><a href="#cb75-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
-<span id="cb75-11"><a href="#cb75-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59" data-code-line-numbers="5-11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb59-2"><a href="#cb59-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb59-3"><a href="#cb59-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb59-4"><a href="#cb59-4"></a></span>
+<span id="cb59-5"><a href="#cb59-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb59-6"><a href="#cb59-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb59-7"><a href="#cb59-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb59-8"><a href="#cb59-8"></a></span>
+<span id="cb59-9"><a href="#cb59-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb59-10"><a href="#cb59-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb59-11"><a href="#cb59-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76" data-code-line-numbers="13-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
-<span id="cb76-2"><a href="#cb76-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
-<span id="cb76-3"><a href="#cb76-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
-<span id="cb76-4"><a href="#cb76-4"></a></span>
-<span id="cb76-5"><a href="#cb76-5"></a><span class="co"># Install and load readr package</span></span>
-<span id="cb76-6"><a href="#cb76-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
-<span id="cb76-7"><a href="#cb76-7"></a><span class="fu">library</span>(readr)</span>
-<span id="cb76-8"><a href="#cb76-8"></a></span>
-<span id="cb76-9"><a href="#cb76-9"></a><span class="co"># Load penguins data set</span></span>
-<span id="cb76-10"><a href="#cb76-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
-<span id="cb76-11"><a href="#cb76-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
-<span id="cb76-12"><a href="#cb76-12"></a></span>
-<span id="cb76-13"><a href="#cb76-13"></a><span class="co"># Assign weight object</span></span>
-<span id="cb76-14"><a href="#cb76-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
-<span id="cb76-15"><a href="#cb76-15"></a></span>
-<span id="cb76-16"><a href="#cb76-16"></a><span class="co"># Get maximum weight</span></span>
-<span id="cb76-17"><a href="#cb76-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60" data-code-line-numbers="13-17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb60-3"><a href="#cb60-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb60-4"><a href="#cb60-4"></a></span>
+<span id="cb60-5"><a href="#cb60-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb60-6"><a href="#cb60-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb60-7"><a href="#cb60-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb60-8"><a href="#cb60-8"></a></span>
+<span id="cb60-9"><a href="#cb60-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb60-10"><a href="#cb60-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb60-11"><a href="#cb60-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
+<span id="cb60-12"><a href="#cb60-12"></a></span>
+<span id="cb60-13"><a href="#cb60-13"></a><span class="co"># Assign weight object</span></span>
+<span id="cb60-14"><a href="#cb60-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
+<span id="cb60-15"><a href="#cb60-15"></a></span>
+<span id="cb60-16"><a href="#cb60-16"></a><span class="co"># Get maximum weight</span></span>
+<span id="cb60-17"><a href="#cb60-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <div class="absolute" style="top: 100px; left: 0px; width: 100%; ">
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77" data-code-line-numbers="19-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
-<span id="cb77-2"><a href="#cb77-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
-<span id="cb77-3"><a href="#cb77-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
-<span id="cb77-4"><a href="#cb77-4"></a></span>
-<span id="cb77-5"><a href="#cb77-5"></a><span class="co"># Install and load readr package</span></span>
-<span id="cb77-6"><a href="#cb77-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
-<span id="cb77-7"><a href="#cb77-7"></a><span class="fu">library</span>(readr)</span>
-<span id="cb77-8"><a href="#cb77-8"></a></span>
-<span id="cb77-9"><a href="#cb77-9"></a><span class="co"># Load penguins data set</span></span>
-<span id="cb77-10"><a href="#cb77-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
-<span id="cb77-11"><a href="#cb77-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
-<span id="cb77-12"><a href="#cb77-12"></a></span>
-<span id="cb77-13"><a href="#cb77-13"></a><span class="co"># Assign weight object</span></span>
-<span id="cb77-14"><a href="#cb77-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
-<span id="cb77-15"><a href="#cb77-15"></a></span>
-<span id="cb77-16"><a href="#cb77-16"></a><span class="co"># Get maximum weight</span></span>
-<span id="cb77-17"><a href="#cb77-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
-<span id="cb77-18"><a href="#cb77-18"></a></span>
-<span id="cb77-19"><a href="#cb77-19"></a><span class="co"># Create data directory</span></span>
-<span id="cb77-20"><a href="#cb77-20"></a><span class="fu">dir.create</span>(<span class="st">'Data'</span>)</span>
-<span id="cb77-21"><a href="#cb77-21"></a></span>
-<span id="cb77-22"><a href="#cb77-22"></a><span class="co"># Select 100 rows and write to .csv file</span></span>
-<span id="cb77-23"><a href="#cb77-23"></a>df_subset <span class="ot">&lt;-</span> <span class="fu">head</span>(df,<span class="dv">100</span>)</span>
-<span id="cb77-24"><a href="#cb77-24"></a><span class="fu">write.csv</span>(df_subset,<span class="st">'Data/penguins_subset.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61" data-code-line-numbers="19-24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="co"># Set working directory to Desktop and download file</span></span>
+<span id="cb61-2"><a href="#cb61-2"></a><span class="fu">setwd</span>(<span class="st">'C:/Users/jsm4/Desktop'</span>)</span>
+<span id="cb61-3"><a href="#cb61-3"></a><span class="fu">download.file</span>(<span class="st">'https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1'</span>, <span class="st">'penguins.csv'</span>)</span>
+<span id="cb61-4"><a href="#cb61-4"></a></span>
+<span id="cb61-5"><a href="#cb61-5"></a><span class="co"># Install and load readr package</span></span>
+<span id="cb61-6"><a href="#cb61-6"></a><span class="fu">install.packages</span>(<span class="st">'readr'</span>)</span>
+<span id="cb61-7"><a href="#cb61-7"></a><span class="fu">library</span>(readr)</span>
+<span id="cb61-8"><a href="#cb61-8"></a></span>
+<span id="cb61-9"><a href="#cb61-9"></a><span class="co"># Load penguins data set</span></span>
+<span id="cb61-10"><a href="#cb61-10"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'C:/Users/jsm4/Desktop/penguins.csv'</span>)  <span class="co"># Absolute path</span></span>
+<span id="cb61-11"><a href="#cb61-11"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">'penguins.csv'</span>)                        <span class="co"># Relative path</span></span>
+<span id="cb61-12"><a href="#cb61-12"></a></span>
+<span id="cb61-13"><a href="#cb61-13"></a><span class="co"># Assign weight object</span></span>
+<span id="cb61-14"><a href="#cb61-14"></a>penguin_weights <span class="ot">&lt;-</span> df<span class="sc">$</span>body_mass_g</span>
+<span id="cb61-15"><a href="#cb61-15"></a></span>
+<span id="cb61-16"><a href="#cb61-16"></a><span class="co"># Get maximum weight</span></span>
+<span id="cb61-17"><a href="#cb61-17"></a><span class="fu">max</span>(penguin_weights, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span>
+<span id="cb61-18"><a href="#cb61-18"></a></span>
+<span id="cb61-19"><a href="#cb61-19"></a><span class="co"># Create data directory</span></span>
+<span id="cb61-20"><a href="#cb61-20"></a><span class="fu">dir.create</span>(<span class="st">'Data'</span>)</span>
+<span id="cb61-21"><a href="#cb61-21"></a></span>
+<span id="cb61-22"><a href="#cb61-22"></a><span class="co"># Select 100 rows and write to .csv file</span></span>
+<span id="cb61-23"><a href="#cb61-23"></a>df_subset <span class="ot">&lt;-</span> <span class="fu">head</span>(df,<span class="dv">100</span>)</span>
+<span id="cb61-24"><a href="#cb61-24"></a><span class="fu">write.csv</span>(df_subset,<span class="st">'Data/penguins_subset.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
