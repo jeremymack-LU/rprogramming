@@ -1229,8 +1229,54 @@ write.csv(df_subset,'Data/penguins_subset.csv')
 :::
 :::
 
+## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
+
+-   R packages come with pre-loaded datasets.
+![](images/tidydata.jpg){.absolute bottom="0" right="0" height="35%"}
+
+::: fragment
+-   Data are read into R with file specific functions (e.g. `read.csv` or `read_xlsx`).
+:::
+
+::: fragment
+-   R identifies data by row ([observation]{style="color:#edea2b"}) then column ([variable]{style="color:#edea2b"}).
+
+    -   Both rows and columns can be referenced by index number, </br>or name (if one is present), using brackets
+    -   Columns can also be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"} (mtcars$mpg)
+:::
+
+::: fragment
+-   Remember the concept of "Tidy Data"
+:::
+
+::: fragment
+![](images/tidydata3.jpg){.absolute bottom="-12" right="0" height="35%"}
+:::
+
 # Topic 8 {data-menu-title="Topic 8"}
 
 [Extras - Additional Resources]{style="font-size: 1.5em; text-align: center"}
 
 ## Topic 8: Additional Resources {data-menu-title="Additional Resources"}
+
+::: columns
+::: {.column width="60%"}
+-   [R for Data Science](https://r4ds.had.co.nz/)
+
+-   [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+
+-   [Twitter for R Programmers](https://www.t4rstats.com/follow-some-folks.html)
+
+-   [LinkedIn Learning](https://www.linkedin.com/learning/search?keywords=r%20programming&u=2222241)
+
+-   Upcoming workshops (*via Zoom):
+
+    - Data wrangling with R (3/7, 3/10*)
+    - Data vizualization with R (3/21, 3/24*)
+    - Shiny Apps in R (3/28, 3/31*)
+:::
+::: {.column width="40%"}
+
+![](images/tidyverse2.png)
+:::
+:::
