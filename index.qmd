@@ -36,9 +36,9 @@ preview-links: auto
     2.  Objects and functions
         - Different data types and structures
     3.  R Environment
-        - Set a working directory
-        - Assign objects & apply functions
-        - Reading data in & writing data out
+        - Working directory
+        - Assign objects and apply functions
+        - Reading ([tidy]{style="color:#edea2b"}) data
 :::
 
 ::: fragment
@@ -68,7 +68,7 @@ preview-links: auto
 
 ## Structure of the presentation {data-menu-title="Presentation outline"}
 
-The presentation is split into seven topics:
+The presentation is split into eight topics:
 
 ::: fragment
 -   Topic 1:    [**What**]{style="color:#edea2b"} is R (and RStudio)?
