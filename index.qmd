@@ -1261,19 +1261,24 @@ write.csv(df_subset,'Data/penguins_subset.csv')
 
 ::: columns
 ::: {.column width="60%"}
--   [R for Data Science](https://r4ds.had.co.nz/)
-
--   [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
-
--   [Twitter for R Programmers](https://www.t4rstats.com/follow-some-folks.html)
-
--   [LinkedIn Learning](https://www.linkedin.com/learning/search?keywords=r%20programming&u=2222241)
-
 -   Upcoming workshops (*via Zoom):
 
     - Data wrangling with R (3/7, 3/10*)
     - Data vizualization with R (3/21, 3/24*)
     - Shiny Apps in R (3/28, 3/31*)
+
+-   [Lehigh's R Programming Slack Channel](https://lehigh-home.slack.com/archives/C04AE4B9X0S)
+
+::: fragment
+-   External resources:
+    
+    - [R for Data Science - Book](https://r4ds.had.co.nz/)
+    - [R for Data Science - Slack Workspace](https://rfordatascience.slack.com)
+    - [RStudio Cheat Sheets](https://www.rstudio.com/resources/cheatsheets/)
+    - [Twitter for R Programmers](https://www.t4rstats.com/follow-some-folks.html)
+    - [LinkedIn Learning](https://www.linkedin.com/learning/search?keywords=r%20programming&u=2222241)
+:::
+
 :::
 ::: {.column width="40%"}
 
