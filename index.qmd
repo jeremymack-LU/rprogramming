@@ -1086,33 +1086,31 @@ mtcars['Mazda RX4',]    # print data for Mazda RX4
 :::
 :::
 
+# Exercise {data-menu-title="Exercise"}
+
+[Getting started with R]{style="font-size: 1.5em; text-align: center"}
+
 ## Exercise - Getting started with R {data-menu-title="Exercise1"}
 
 -   First, try the following:
 
-    1. Set your working directory to the Desktop.
-    2. Download the file [penguins.csv]{style="color:#edea2b"} using the following command:
-    ```{r}
-#| echo: true
-#| eval: false
-download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
-    ```
+    1. Set your working directory to [R:/introduction/data]{style="color:#edea2b"}.
+    2. Install and load the Tidyverse package `readr`.
+    3. Using the `read_csv` function, read in [penguins.csv]{style="color:#edea2b"}.
 
 ::: fragment
 -   Next, try these additional steps:
 
-    1. Install and load the Tidyverse package `readr`.
-    2. Using the `read_csv` function, read in penguins.csv.
-    3. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
-    4. Use this object to find the heaviest weight.
+    4. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
+    5. Use this object to find the heaviest weight.
 :::
 
 ::: fragment
 -   Finally, try the following:
 
-    1. Create a folder on the Desktop called Data.
-    2. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
-    3. Write it to a .csv file within your new Data folder, using the `write.csv` function.
+    6. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
+    7. Write this new object to a .csv file, within the exercise folder, with your initials in the filename.
+        - Use either the `write.csv` or `write_csv` function.
 :::
 
 :::{.absolute top="100" right="0"}    
@@ -1129,9 +1127,15 @@ countdown::countdown(5L)
 ```{r}
 #| echo: true
 #| eval: false
-# Set working directory to Desktop and download file
-setwd('C:/Users/jsm4/Desktop')
-download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+# Set working directory to data folder
+setwd('R:/introduction/data')
+
+# Install and load readr package
+install.packages('readr')
+library(readr)
+
+# Load penguins data set
+df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
 ```
 :::
 :::
@@ -1141,39 +1145,16 @@ download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'pe
 ```{r}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "5-11"
-# Set working directory to Desktop and download file
-setwd('C:/Users/jsm4/Desktop')
-download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+#| code-line-numbers: "10-15"
+# Set working directory to data folder
+setwd('R:/introduction/data')
 
 # Install and load readr package
 install.packages('readr')
 library(readr)
 
 # Load penguins data set
-df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
-df <- read_csv('penguins.csv')                        # Relative path
-```
-:::
-:::
-
-::: {.absolute top="100" left="0" width="100%"}
-::: fragment
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "13-17"
-# Set working directory to Desktop and download file
-setwd('C:/Users/jsm4/Desktop')
-download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
-
-# Install and load readr package
-install.packages('readr')
-library(readr)
-
-# Load penguins data set
-df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
-df <- read_csv('penguins.csv')                        # Relative path
+df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
 
 # Assign weight object
 penguin_weights <- df$body_mass_g
@@ -1189,32 +1170,27 @@ max(penguin_weights, na.rm=TRUE)
 ```{r}
 #| echo: true
 #| eval: false
-#| code-line-numbers: "19-24"
-# Set working directory to Desktop and download file
-setwd('C:/Users/jsm4/Desktop')
-download.file('https://www.dropbox.com/s/pyzzrpkvf76f4t6/penguins.csv?dl=1', 'penguins.csv')
+#| code-line-numbers: "17-20"
+# Set working directory to data folder
+setwd('R:/introduction/data')
 
 # Install and load readr package
 install.packages('readr')
 library(readr)
 
 # Load penguins data set
-df <- read_csv('C:/Users/jsm4/Desktop/penguins.csv')  # Absolute path
-df <- read_csv('penguins.csv')                        # Relative path
+df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
 
 # Assign weight object
 penguin_weights <- df$body_mass_g
 
 # Get maximum weight
 max(penguin_weights, na.rm=TRUE)
-
-# Create data directory
-dir.create('Data')
 
 # Select 100 rows and write to .csv file
 df_subset <- head(df,100)
-write.csv(df_subset,'Data/penguins_subset.csv')
 
+write.csv(df_subset,'Data/penguins_subset.csv')
 ```
 :::
 :::
