@@ -23,8 +23,6 @@ preview-links: auto
 ---
 
 ## About this presentation {data-menu-title="About"}
-
-::: columns
 -   This seminar is the first in a series on [**R programming**]{style="color:#edea2b"}.
 
 -   It's targeted at people that have little to no programming experience.
@@ -44,19 +42,10 @@ preview-links: auto
 ::: fragment
 -   Raw code available on [Github](https://github.com/jeremymack-LU/rprogramming/blob/main/index.qmd)
 :::
-:::
 
-::: columns
-::: {.column width="33%"}
-:::
-
-::: {.column width="33%"}
-:::
-
-::: {.column width="33%"}
-![](images/rlang_hex.png){width="32%"} ![](images/rstudio_hex.png){width="32%"} ![](images/tidyverse_hex.png){width="32%"}
-:::
-:::
+![](images/rlang_hex.png){.absolute bottom="0" right="0" width="170"}
+![](images/rstudio_hex.png){.absolute bottom="0" right="175" width="170"}
+![](images/tidyverse_hex.png){.absolute bottom="0" right="350" width="170"}
 
 ## Programming in R {data-menu-title="R roller coaster"}
 
