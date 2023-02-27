@@ -440,7 +440,7 @@ x <- 10.5               # Define object x
 x                       # Print x
 ```
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index=2}
 ```{r}
 #| echo: true
 #| eval: true
@@ -457,7 +457,7 @@ x <- 10                             # Define object x
 x                                   # Print x
 ```
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=3}
 ```{r}
 #| echo: true
 #| eval: true
@@ -465,7 +465,7 @@ typeof(x)                           # Print the data type of x
 ```
 :::
 
-::: {.fragment fragment-index=2}
+::: {.fragment fragment-index=4}
 ```{r}
 #| echo: true
 #| eval: true
@@ -793,7 +793,8 @@ age_mean(ages)
 -   Packages in R:
 
     - R packages are used to install built-in functions into the R Environment.
-    - In addition to functions, packages also include data sets, help documentation, and how-to examples (i.e., vignette).
+    - R packages also include data sets, help documentation, and how-to examples (i.e., vignette).
+    - R packages [**extend the functionality**]{style="color:#edea2b"} of base R.
 
 ![](images/r_packages.png){.absolute bottom="0" right="0" height="50%"}
 
