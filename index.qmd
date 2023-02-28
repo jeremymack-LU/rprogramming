@@ -36,7 +36,7 @@ preview-links: auto
     3.  R Environment
         - Working directory
         - Assign objects and apply functions
-        - Reading ([tidy]{style="color:#edea2b"}) data
+        - Read ([tidy]{style="color:#edea2b"}) data
 :::
 
 ::: fragment
@@ -836,7 +836,14 @@ library(pacman)                  # Load into R environment
 p_load(ggplot2, dplyr)           # Use p_load function to install and load multiple packages
 ```
 ### RStudio IDE
-![](images/explorer1.png){.absolute bottom="0" left="0" height="50%"}
+::: columns
+::: {.column width="50%"}
+![](images/explorer1.png){height=350}
+:::
+::: {.column width="50%"}
+![](images/explorer2.png){height=350}
+:::
+:::
 :::
 :::
 
