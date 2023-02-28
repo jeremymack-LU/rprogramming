@@ -1086,6 +1086,31 @@ mtcars['Mazda RX4',]    # print data for Mazda RX4
 :::
 :::
 
+## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
+
+-   Data are read into R with file specific functions (e.g. `read.csv` or `read_xlsx`).
+
+![](images/tidydata.jpg){.absolute bottom="0" right="0" height="250"}
+
+::: fragment
+-   R packages come with pre-loaded datasets.
+:::
+
+::: fragment
+-   R identifies data by row ([observation]{style="color:#edea2b"}) then column ([variable]{style="color:#edea2b"}).
+
+    -   Both rows and columns can be referenced by index number, </br>or name (if one is present), using brackets
+    -   Columns can also be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"} (mtcars$mpg)
+:::
+
+::: fragment
+-   Remember the concept of "Tidy Data"
+:::
+
+::: fragment
+![](images/tidydata3.jpg){.absolute bottom="0" right="0" height="35%"}
+:::
+
 # Exercise {data-menu-title="Exercise"}
 
 [Getting started with R]{style="font-size: 1.5em; text-align: center"}
@@ -1193,30 +1218,6 @@ df_subset <- head(df,100)
 write.csv(df_subset,'Data/penguins_subset.csv')
 ```
 :::
-:::
-
-## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
-
--   R packages come with pre-loaded datasets.
-![](images/tidydata.jpg){.absolute bottom="0" right="0" height="35%"}
-
-::: fragment
--   Data are read into R with file specific functions (e.g. `read.csv` or `read_xlsx`).
-:::
-
-::: fragment
--   R identifies data by row ([observation]{style="color:#edea2b"}) then column ([variable]{style="color:#edea2b"}).
-
-    -   Both rows and columns can be referenced by index number, </br>or name (if one is present), using brackets
-    -   Columns can also be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"} (mtcars$mpg)
-:::
-
-::: fragment
--   Remember the concept of "Tidy Data"
-:::
-
-::: fragment
-![](images/tidydata3.jpg){.absolute bottom="-12" right="0" height="35%"}
 :::
 
 # Topic 8 {data-menu-title="Topic 8"}
