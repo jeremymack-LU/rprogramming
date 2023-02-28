@@ -674,7 +674,7 @@ str(survey)
 ::: {.column width="1%"}
 :::
 ::: {.column width="49%"}
--   **Data frame objects:**
+-   **Tibble objects ("Lazy" data frames:**
 
     1. Large data structure
     2. Has 2-dimensions, representing its height (rows) and width (columns)
@@ -701,6 +701,14 @@ str(survey)
 # Topic 7 {data-menu-title="Topic 7"}
 
 [Data in R]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 7: Data in R {data-menu-title="Tidy data"}
+
+<p>
+
+<img src="./images/tidydata.jpg" alt="Picture of tidy data" height="100%" width="100%"/>
+
+</p>
 
 ## Topic 7: Data in R {data-menu-title="Data in R"}
 -   Data are read into R and stored as objects
@@ -743,13 +751,77 @@ read_xls()             # Reads .xls files
 :::
 :::
 
-## Topic 7: Data in R {data-menu-title="Tidy data"}
+## Topic 7: Data in R {data-menu-title="Reading in data"}
+-   Let's practice reading data into R:
 
-<p>
+```{r}
+#| echo: true
+#| eval: false
+# Load the file mpg.csv in the data folder to an object called df
+# Relative path to file
+df <- read.csv('data/mpg.csv')
 
-<img src="./images/tidydata.jpg" alt="Picture of tidy data" height="100%" width="100%"/>
+# Absolute path to file
+df <- read.csv('C:/Users/jsm4/Desktop/r_introduction/data/mpg.csv')
+```
 
-</p>
+::: fragment
+-   Next, print the first few rows with the `head` function:
+
+```{r}
+#| echo: true
+#| eval: false
+head(df)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+head(mtcars)
+```
+:::
+
+## Topic 7: Data in R {data-menu-title="Reading in data"}
+-   Let's use our df object to see how R references data
+
+-   R can reference data by value (cell), variable (column), or observation (row)
+
+::: panel-tabset
+### Value
+-   Using brackets, R reads values as row by column, or [[row,column]]{style="color:#edea2b"}
+```{r}
+#| echo: false
+#| eval: true
+df <- mtcars
+```
+
+```{r}
+#| echo: true
+#| eval: true
+df[1,1]             # print value in row 1, column 1
+df[6,10]            # print value in row 6, column 10
+```
+
+### Variable
+-   Variables can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}, or in brackets by name or index
+```{r}
+#| echo: true
+#| eval: true
+df$mpg                  # print mpg variable
+mtcars[,'mpg']          # print mpg variable by name
+mtcars[,1]              # print mpg variable by index number
+```
+### Observation
+-   Observations can be referenced in brackets by name (*if row names are present*), or index
+```{r}
+#| echo: true
+#| eval: true
+df[1,]                  # print first row
+df['Mazda RX4 Wag',]    # print data for Mazda RX4 Wag
+df[c(1,5),]             # print first and fifth row
+```
+
+:::
 
 ## Topic 7: Data in R {data-menu-title="Reading in data"}
 -   Packages often come with pre-loaded data
