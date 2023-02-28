@@ -1127,15 +1127,16 @@ mtcars['Mazda RX4',]    # print data for Mazda RX4
 -   Next, try these additional steps:
 
     4. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
-    5. Use this object to find the heaviest weight.
+    5. Use this object to find the heaviest weight, using the `max` function.
 :::
 
 ::: fragment
 -   Finally, try the following:
 
     6. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
-    7. Write this new object to a .csv file, within the exercise folder, with your initials in the filename.
+    7. Write this new object to a .csv file, within the [exercise folder]{style="color:#edea2b"}.
         - Use either the `write.csv` or `write_csv` function.
+        - Include your initials in the filename.
 :::
 
 :::{.absolute top="100" right="0"}    
@@ -1215,7 +1216,7 @@ max(penguin_weights, na.rm=TRUE)
 # Select 100 rows and write to .csv file
 df_subset <- head(df,100)
 
-write.csv(df_subset,'Data/penguins_subset.csv')
+write.csv(df_subset,'exercise/penguins_subset_jsm.csv')
 ```
 :::
 :::
