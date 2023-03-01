@@ -674,7 +674,7 @@ str(survey)
 ::: {.column width="1%"}
 :::
 ::: {.column width="49%"}
--   **Tibble objects ("Lazy" data frames:**
+-   **Tibble objects ("Lazy" data frames):**
 
     1. Large data structure
     2. Has 2-dimensions, representing its height (rows) and width (columns)
@@ -696,229 +696,6 @@ str(survey)
 :::
 :::
 :::
-:::
-
-# Topic 7 {data-menu-title="Topic 7"}
-
-[Data in R]{style="font-size: 1.5em; text-align: center"}
-
-## Topic 7: Data in R {data-menu-title="Tidy data"}
-
-<p>
-
-<img src="./images/tidydata.jpg" alt="Picture of tidy data" height="100%" width="100%"/>
-
-</p>
-
-## Topic 7: Data in R {data-menu-title="Data in R"}
--   Data are read into R and stored as objects
-
-::: fragment
--   Read `functions` selected based on the type of file being read
-:::
-
-::: fragment
--   Reading can be done programmatically, or with the RStudio IDE
-
-::: panel-tabset
-### Programmatically
-```{r}
-#| echo: true
-#| eval: false
-# base package options (reads to a data frame)
-read.table()           # Reads tabular data
-read.csv()             # Reads comma separated files
-read.delim()           # Reads tab separated files
-
-# readr package options (reads to a tibble)
-read_table()           # Reads tabular data
-read_csv()             # Reads comma separated files
-read_delim()           # Reads tab separated files
-
-# readxl package options (reads to a tibble)
-read_xlsx()            # Reads .xlsx files
-read_xls()             # Reads .xls files
-```
-### RStudio IDE
-::: columns
-::: {.column width="50%"}
-![](images/environment1.png){height=350}
-:::
-::: {.column width="50%"}
-![](images/environment2.png){height=350}
-:::
-:::
-:::
-:::
-
-## Topic 7: Data in R {data-menu-title="Reading in data"}
--   Let's practice reading data into R:
-
-```{r}
-#| echo: true
-#| eval: false
-# Load the file mpg.csv in the data folder to an object called df
-# Relative path to file
-df <- read.csv('data/mpg.csv')
-
-# Absolute path to file
-df <- read.csv('C:/Users/jsm4/Desktop/r_introduction/data/mpg.csv')
-```
-
-::: fragment
--   Next, print the first few rows with the `head` function:
-
-```{r}
-#| echo: true
-#| eval: false
-head(df)
-```
-
-```{r}
-#| echo: false
-#| eval: true
-head(mtcars)
-```
-:::
-
-## Topic 7: Data in R {data-menu-title="Reading in data"}
--   Let's use our df object to see how R references data
-
--   R can reference data by value (cell), variable (column), or observation (row)
-
-::: panel-tabset
-### Value
--   Using brackets, R reads values as row by column, or [[row,column]]{style="color:#edea2b"}
-```{r}
-#| echo: false
-#| eval: true
-df <- mtcars
-```
-
-```{r}
-#| echo: true
-#| eval: true
-df[1,1]             # print value in row 1, column 1
-df[6,10]            # print value in row 6, column 10
-```
-
-### Variable
--   Variables can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}, or in brackets by name or index
-```{r}
-#| echo: true
-#| eval: true
-df$mpg                  # print mpg variable
-mtcars[,'mpg']          # print mpg variable by name
-mtcars[,1]              # print mpg variable by index number
-```
-### Observation
--   Observations can be referenced in brackets by name (*if row names are present*), or index
-```{r}
-#| echo: true
-#| eval: true
-df[1,]                  # print first row
-df['Mazda RX4 Wag',]    # print data for Mazda RX4 Wag
-df[c(1,5),]             # print first and fifth row
-```
-
-:::
-
-## Topic 7: Data in R {data-menu-title="Reading in data"}
--   Packages often come with pre-loaded data
-
--   For example, the `datasets` package comes with 104 pre-loaded datasets
-
-::: {.absolute top="160" left="0"}
-::: {.fragment .fade-in-then-out}
--   Let's use the `mtcars` dataset to see how R refers to data:
-    
-    -   R reads data as row by column, using brackets
-
-```{r}
-#| echo: true
-#| eval: true
-mtcars[6,10]            # print value in row 6, column 10
-```
-
-:::
-:::
-
-::: {.absolute top="160" left="0"}
-::: {.fragment .fade-in-then-out}
--   Let's use the `mtcars` dataset to see how R refers to data:
-
-    -   R reads data as row by column, using brackets
-    -   Variables (columns) can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}
-
-```{r}
-#| echo: true
-#| eval: true
-mtcars$mpg              # print mpg variable
-```
-
-:::
-:::
-
-::: {.absolute top="160" left="0"}
-::: {.fragment .fade-in-then-out}
--   Let's use the `mtcars` dataset to see how R refers to data:
-
-    -   R reads data as row by column, using brackets
-    -   Variables (columns) can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}
-    -   Variables can also be referenced in brackets by name, or index number
-
-```{r}
-#| echo: true
-#| eval: true
-mtcars[,'mpg']          # print mpg variable by name
-mtcars[,1]              # print mpg variable by index number
-```
-
-:::
-:::
-
-::: {.absolute top="160" left="0"}
-::: {.fragment .fade-in-then-out}
--   Let's use the `mtcars` dataset to see how R refers to data:
-
-    -   R reads data as row by column, using brackets
-    -   Variables (columns) can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}
-    -   Variables can also be referenced in brackets by name, or index number
-    -   Observations (rows) can be referenced in brackets by name (*if row names are present*),</br> or index number
-
-```{r}
-#| echo: true
-#| eval: true
-mtcars[c(1,5),]         # print the first and fifth row
-mtcars['Mazda RX4',]    # print data for Mazda RX4
-```
-
-:::
-:::
-
-## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
-
--   Data are read into R with file specific functions (e.g. `read.csv` or `read_xlsx`).
-
-![](images/tidydata.jpg){.absolute bottom="0" right="0" height="250"}
-
-::: fragment
--   R packages also come with pre-loaded datasets.
-:::
-
-::: fragment
--   R identifies data by row ([observation]{style="color:#edea2b"}) then column ([variable]{style="color:#edea2b"}).
-
-    -   Both rows and columns can be referenced by index number, </br>or name (if one is present), using brackets
-    -   Columns can also be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"} (mtcars$mpg)
-:::
-
-::: fragment
--   Remember the concept of "Tidy Data"
-:::
-
-::: fragment
-![](images/tidydata3.jpg){.absolute bottom="0" right="0" height="35%"}
 :::
 
 # Topic 6 {data-menu-title="Topic 6"}
@@ -1188,6 +965,159 @@ tidyverse_packages(include_self=FALSE)
 -   Tidyverse - collection of R packages for data science, supported by RStudio.
 
     -   Loaded in bulk with `tidyverse` function
+:::
+
+# Topic 7 {data-menu-title="Topic 7"}
+
+[Data in R]{style="font-size: 1.5em; text-align: center"}
+
+## Topic 7: Data in R {data-menu-title="Tidy data"}
+
+<p>
+
+<img src="./images/tidydata.jpg" alt="Picture of tidy data" height="100%" width="100%"/>
+
+</p>
+
+## Topic 7: Data in R {data-menu-title="Data in R"}
+-   Data are read into R and stored as objects
+
+::: fragment
+-   Read `functions` are selected based on the type of file
+:::
+
+::: fragment
+-   Data can be read programmatically, or with the RStudio IDE
+
+::: panel-tabset
+### Programmatically
+```{r}
+#| echo: true
+#| eval: false
+# base package options (reads to a data frame)
+read.table()           # Reads tabular data
+read.csv()             # Reads comma separated files
+read.delim()           # Reads tab separated files
+
+# readr package options (reads to a tibble)
+read_table()           # Reads tabular data
+read_csv()             # Reads comma separated files
+read_delim()           # Reads tab separated files
+
+# readxl package options (reads to a tibble)
+read_xlsx()            # Reads .xlsx files
+read_xls()             # Reads .xls files
+```
+### RStudio IDE
+::: columns
+::: {.column width="50%"}
+![](images/environment1.png){height=350}
+:::
+::: {.column width="50%"}
+![](images/environment2.png){height=350}
+:::
+:::
+:::
+:::
+
+## Topic 7: Data in R {data-menu-title="Reading in data"}
+-   Let's practice reading data into R
+
+::: fragment
+-   Load the file [mpg.csv]{style="color:#edea2b"} in the data folder to an object called [df]{style="color:#edea2b"}:
+
+```{r}
+#| echo: true
+#| eval: false
+# Relative path to file
+df <- read.csv('data/mpg.csv')
+
+# Absolute path to file
+df <- read.csv('C:/Users/jsm4/Desktop/r_introduction/data/mpg.csv')
+```
+:::
+
+::: fragment
+-   Check the first few rows with the `head` function:
+
+```{r}
+#| echo: true
+#| eval: false
+head(df)
+```
+
+```{r}
+#| echo: false
+#| eval: true
+head(mtcars)
+```
+:::
+
+## Topic 7: Data in R {data-menu-title="Reading in data"}
+-   Let's use the [df]{style="color:#edea2b"} object to see how R references data
+
+::: fragment
+-   R can reference data by value (cell), variable (column), or observation (row)
+
+::: panel-tabset
+### Value
+-   Using brackets, R reads values as row by column, or [[row,column]]{style="color:#edea2b"}
+```{r}
+#| echo: false
+#| eval: true
+df <- mtcars
+```
+
+```{r}
+#| echo: true
+#| eval: true
+df[1,1]             # print value in row 1, column 1
+df[6,10]            # print value in row 6, column 10
+```
+### Variable
+-   Variables can be referenced as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}, or in brackets by name or index
+```{r}
+#| echo: true
+#| eval: true
+df$mpg                  # print mpg variable
+mtcars[,'mpg']          # print mpg variable by name
+mtcars[,1]              # print mpg variable by index number
+```
+### Observation
+-   Observations can be referenced in brackets by name (*if row names are present*), or index
+```{r}
+#| echo: true
+#| eval: true
+df[1,]                  # print first row
+df['Mazda RX4 Wag',]    # print data for Mazda RX4 Wag
+df[c(1,5),]             # print first and fifth row
+```
+:::
+:::
+
+## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
+
+-   Data are read into R with file specific functions (e.g., `read.csv` or `read_xlsx`).
+
+![](images/tidydata.jpg){.absolute bottom="0" right="0" height="250"}
+
+::: fragment
+-   R identifies data by row ([observation]{style="color:#edea2b"}) then column ([variable]{style="color:#edea2b"}).
+
+    -   Cells can be referenced as [row,column]
+        - df[1,2]
+    -   Rows can be read by index number, or name
+        - df[1,] or df["Toyota Corolla",]
+    -   Columns can be read by index number, name, or as [object name]{style="color:#edea2b"}`$`[variable name]{style="color:#edea2b"}
+        - df[,1], df[,"mpg"], or df$mpg
+:::
+
+::: fragment
+-   Remember the concept of "Tidy Data"
+:::
+
+::: fragment
+![](images/tidydata3.jpg){.absolute bottom="0" right="0" height="35%"}
 :::
 
 # Exercise {data-menu-title="Exercise"}
