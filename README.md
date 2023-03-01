@@ -1,1 +1,1 @@
-# rprogramming
+# R programming seminar
