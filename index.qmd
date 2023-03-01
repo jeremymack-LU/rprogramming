@@ -1157,55 +1157,11 @@ countdown::countdown(5L)
 ## Exercise - Getting started with R {data-menu-title="Answer"}
 -   How did you do?
 
-::: {.absolute top="100" left="0" width="100%"}
-::: fragment
+:::fragment
 ```{r}
 #| echo: true
 #| eval: false
-# Set working directory to data folder
-setwd('R:/introduction/data')
-
-# Install and load readr package
-install.packages('readr')
-library(readr)
-
-# Load penguins data set
-df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
-```
-:::
-:::
-
-::: {.absolute top="100" left="0" width="100%"}
-::: fragment
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "10-15"
-# Set working directory to data folder
-setwd('R:/introduction/data')
-
-# Install and load readr package
-install.packages('readr')
-library(readr)
-
-# Load penguins data set
-df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
-
-# Assign weight object
-penguin_weights <- df$body_mass_g
-
-# Get maximum weight
-max(penguin_weights, na.rm=TRUE)
-```
-:::
-:::
-
-::: {.absolute top="100" left="0" width="100%"}
-::: fragment
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "17-20"
+#| code-line-numbers: "1-9|11-15|17-20"
 # Set working directory to data folder
 setwd('R:/introduction/data')
 
@@ -1225,9 +1181,8 @@ max(penguin_weights, na.rm=TRUE)
 # Select 100 rows and write to .csv file
 df_subset <- head(df,100)
 
-write.csv(df_subset,'exercise/penguins_subset_jsm.csv')
+write.csv(df_subset,'exercise/penguins_subset.csv')
 ```
-:::
 :::
 
 # Topic 8 {data-menu-title="Topic 8"}
