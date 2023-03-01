@@ -355,10 +355,10 @@ Consider a car analogy.
 ::: fragment
 -   Basic things to remember about R:
     
-    - The [working directory]{style="color:#edea2b"} is where R will look for things (by default).
-    - R is [case-sensitive]{style="color:#edea2b"}.
-    - R is a calculator.
-    - R can be used to store ([assignments]{style="color:#edea2b"}) one or more values ([concatenation]{style="color:#edea2b"}) as objects.
+    - The [working directory]{style="color:#edea2b"} is where R will look for things (by default)
+    - R is [case-sensitive]{style="color:#edea2b"}
+    - R is a calculator
+    - R can be used to store ([assignments]{style="color:#edea2b"}) one or more values ([concatenation]{style="color:#edea2b"}) as objects
 :::
 
 # Topic 5 {data-menu-title="Topic 5"}
@@ -1095,6 +1095,77 @@ df[c(1,5),]             # print first and fifth row
 :::
 :::
 
+# Exercise {data-menu-title="Exercise"}
+
+[Getting started with R]{style="font-size: 1.5em; text-align: center"}
+
+## Exercise - Getting started with R {data-menu-title="Exercise1"}
+
+-   First, try the following:
+
+    1. Set your working directory to the [data]{style="color:#edea2b"} folder in the r_introduction folder.
+    2. Install and load the Tidyverse package `readr`.
+    3. Using the `read_csv` function, read in [penguins.csv]{style="color:#edea2b"}.
+
+::: fragment
+-   Next, try these additional steps:
+
+    4. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
+    5. Use this object to find the heaviest weight, using the `max` function.
+:::
+
+::: fragment
+-   Finally, try the following:
+
+    6. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
+    7. Write this new object to a .csv file, within the [exercise folder]{style="color:#edea2b"}, using the `write.csv` function.
+        - For the [file]{style="color:#edea2b"} argument, use this path, adding your initials at the end:
+        
+    ```{r}
+#| echo: true
+#| eval: false
+
+'//gis1/projects/r_workshops/r_introduction/data/exercise/df_sub_.csv'
+    ```
+:::
+
+:::{.absolute top="100" right="0"}    
+```{r}
+countdown::countdown(5L)
+```
+:::
+
+## Exercise - Getting started with R {data-menu-title="Answer"}
+-   How did you do?
+
+:::fragment
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1-9|11-15|17-20"
+# Set working directory to data folder
+setwd('C:/Users/jsm4/Desktop/r_introduction/data')
+
+# Install and load readr package
+install.packages('readr')
+library(readr)
+
+# Load penguins data set
+df <- read_csv('penguins.csv')  # Absolute path
+
+# Assign weight object
+penguin_weights <- df$body_mass_g
+
+# Get maximum weight
+max(penguin_weights, na.rm=TRUE)
+
+# Select 100 rows and write to .csv file
+df_subset <- head(df,100)
+
+write.csv(df_subset,'//gis1/projects/r_workshops/r_introduction/data/exercise/df_sub_jsm.csv')
+```
+:::
+
 ## Review - Data in R: {data-background="#000000" data-menu-title="Review 4 - Data"}
 
 -   Data are read into R with file specific functions (e.g., `read.csv` or `read_xlsx`).
@@ -1118,71 +1189,6 @@ df[c(1,5),]             # print first and fifth row
 
 ::: fragment
 ![](images/tidydata3.jpg){.absolute bottom="0" right="0" height="35%"}
-:::
-
-# Exercise {data-menu-title="Exercise"}
-
-[Getting started with R]{style="font-size: 1.5em; text-align: center"}
-
-## Exercise - Getting started with R {data-menu-title="Exercise1"}
-
--   First, try the following:
-
-    1. Set your working directory to [R:/introduction/data]{style="color:#edea2b"}.
-    2. Install and load the Tidyverse package `readr`.
-    3. Using the `read_csv` function, read in [penguins.csv]{style="color:#edea2b"}.
-
-::: fragment
--   Next, try these additional steps:
-
-    4. Assign the [body_mass_g]{style="color:#edea2b"} variable to an object.
-    5. Use this object to find the heaviest weight, using the `max` function.
-:::
-
-::: fragment
--   Finally, try the following:
-
-    6. Assign the first 100 rows of the penguin data set to an object, using the `head` function.
-    7. Write this new object to a .csv file, within the [exercise folder]{style="color:#edea2b"}.
-        - Use either the `write.csv` or `write_csv` function.
-        - Include your initials in the filename.
-:::
-
-:::{.absolute top="100" right="0"}    
-```{r}
-countdown::countdown(5L)
-```
-:::
-
-## Exercise - Getting started with R {data-menu-title="Answer"}
--   How did you do?
-
-:::fragment
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: "1-9|11-15|17-20"
-# Set working directory to data folder
-setwd('R:/introduction/data')
-
-# Install and load readr package
-install.packages('readr')
-library(readr)
-
-# Load penguins data set
-df <- read_csv('R:/introduction/data/penguins.csv')  # Absolute path
-
-# Assign weight object
-penguin_weights <- df$body_mass_g
-
-# Get maximum weight
-max(penguin_weights, na.rm=TRUE)
-
-# Select 100 rows and write to .csv file
-df_subset <- head(df,100)
-
-write.csv(df_subset,'exercise/penguins_subset.csv')
-```
 :::
 
 # Topic 8 {data-menu-title="Topic 8"}
